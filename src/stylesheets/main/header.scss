@@ -1,0 +1,22 @@
+.header {
+  @extend %full-width;
+  position: absolute;
+  top: 0;
+  padding: 23px 0;
+  height: $header-height;
+  box-sizing: border-box;
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center center;
+
+  .logo {
+    @extend %logos;
+    width: 149px;
+  	height: 35px;
+  	background-position: 0 -24px;
+  }
+
+  .button {
+    float: right;
+  }
+}

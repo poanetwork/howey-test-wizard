@@ -1,0 +1,141 @@
+{
+  "questions": [
+    {
+      "title": "Is there an investment of money?",
+      "answers": [
+        {
+          "title": "There is no crowdsale. New tokens are given away for free, or are earned through mining",
+          "description": "Tokens which are not sold for value do not involve an investment of money. For example, if all tokens are distributed for free, or are only produced through mining, then there is no sale for value.",
+          "points": 0
+        }, {
+          "title": "Tokens are sold for value (crowdsale)",
+          "description": "Tokens which are sold in a crowdsale, at any time, regardless of whether sold for fiat or digital currency (or anything else of value) involve an investment of money",
+          "points": 100
+        }
+      ]
+    }, {
+      "title": "What is the timing of the sale?",
+      "answers": [
+        {
+          "title": "Pre-deployment",
+          "description": "A sale of tokens before any code has been deployed on a blockchain is more likely to result in a common enterprise where the profits arise from the efforts of others. This is because the buyers are completely dependent on the actions of the developers, and the buyers cannot actually participate in the network until a later time.",
+          "points": 70
+        }, {
+          "title": "The protocol is operational on a test network",
+          "description": "If there is a functioning network there is less likely there is to be a common enterprise where the profits arisef rom the efforts of others. The closer the sale is to launch of the network, the less likley there is to be a common enterprise.",
+          "points": 60
+        }, {
+          "title": "Live network is operational",
+          "description": "If the token is sold once there is an operational network using the token, or sold immediately before the network goes live, it is again less likely to result in a common enterprise",
+          "points": 50
+        }
+      ]
+    }, {
+      "title": "What do token holders have to do in order to get economic benefits from the network?",
+      "answers": [
+        {
+          "title": "All token holders will always receive the same returns",
+          "description": "If returns are paid to all token holders equally (or in proportion to their token holdings) regardless of any action on the part of the token holder, then their interests are more likely aligned in a common enterprise",
+          "points": 25
+        }, {
+          "title": "There is a possibility of varying returns between token holders, based on their participation or use of the network",
+          "description": "If token holders’ returns depend on their own efforts, and can vary depending on the amount of effort they each put in, then there is less likely to be a common enterprise",
+          "points": -20
+        }
+      ]
+    }, {
+      "title": "What function does the token have?",
+      "answers": [
+        {
+          "title": "Ownership or equity interest in a legal entity, including a general partnership",
+          "description": "Tokens which give, or purport to give, traditional equity, debt or other investor rights are almost certainly securities.",
+          "points": 100
+        }, {
+          "title": "Entitlement to a share of profits and/or losses, or assets and/or liabilities",
+          "description": "If one or more of these characteristics apply, the token is almost certainly a security, notwithstanding the results of the other elements",
+          "points": 100
+        }, {
+          "title": "Gives holder status as a creditor or lender",
+          "description": "If one or more of these characteristics apply, the token is almost certainly a security, notwithstanding the results of the other elements",
+          "points": 100
+        }, {
+          "title": "A claim in bankruptcy as equity interest holder or creditor",
+          "description": "If one or more of these characteristics apply, the token is almost certainly a security, notwithstanding the results of the other elements",
+          "points": 100
+        }, {
+          "title": "A right to repayment of purchase price and/or payment of interest",
+          "description": "If one or more of these characteristics apply, the token is almost certainly a security, notwithstanding the results of the other elements",
+          "points": 100
+        }, {
+          "title": "No function other than mere existence",
+          "description": "A token which does not have any real function, or is used in a network with no real function, is very likely to be bought with an expectation of profit from the efforts of others, because no real use or participation by token holders is possible. Voting rights alone do not constitute real functionality.",
+          "points": 100
+        }, {
+          "title": "Specific functionality that is only available to token holders",
+          "description": "A token which has a specific function that is only available to token holders is more likely to be purchased in order to access that function and less likely to be purchased with an expectation of profit.",
+          "points": 0
+        }
+      ]
+    }, {
+      "title": "Does the holder rely on manual, off-blockchain action to realize the benefit of the token?",
+      "answers": [
+        {
+          "title": "Manual action is required outside of the network (e.g. off-blockchain) in order for the holder to get the benefit of the token",
+          "description": "A token whose value depends on someone taking specific manual action outside of the network means that the token is not functional in and of itself. Instead, the token relies on a level of trust in a third party taking action off-blockchain. This sort of token is more likely to be bought for speculation - i.e. the expectation of profits.",
+          "points": 80
+        }, {
+          "title": "All functionality is inherent in the token and occurs programmatically",
+          "description": "A token which is built with all the necessary technical permissions means that the token holder does not rely on manual actions of any third party. This means that the buyers are more likely to purchase the token for use rather than with the expectation of profit from the efforts of others.",
+          "points": 0
+        }
+      ]
+    }, {
+      "title": "What is the timing of the sale?",
+      "answers": [
+        {
+          "title": "Pre-deployment",
+          "description": "A sale of tokens before any code has been deployed on a blockchain is more likely to result in buyers purchasing for speculative reasons with the expectation of profit, rather than practical use cases.",
+          "points": 20
+        }, {
+          "title": "The protocol is operational on a test network",
+          "description": "If the sale occurs after code has been deployed and tested, the token is closer to being able to be used",
+          "points": 10
+        }, {
+          "title": "Live network is operational",
+          "description": "If the token is sold once there is an operational network using the token, or immediately before the network goes live, it is more likely to be purchased with the intention of use rather than profit.",
+          "points": 0
+        }
+      ]
+    }, {
+      "title": "Can the token holders exercise real and significant control via voting?",
+      "answers": [
+        {
+          "title": "Token holders as a whole are able to control the development team’s access to funds",
+          "description": "If the collective approval of token holders is required in order for the development team to access the funds raised in the crowdsale, then any value realized by the token holders is more closely tied to their own decisions, and less reliant on the efforts of others.",
+          "points": -20
+        }, {
+          "title": "Token holders as a whole are able to vote on significant decisions for the protocol",
+          "description": "If the collective approval of token holders is required in order to make significant changes to the protocol, then any value realized by the token holders is more closely tied to their own decisions, and less reliant on the efforts of others.",
+          "points": -10
+        }
+      ]
+    }, {
+      "title": "How is the token sale marketed?",
+      "answers": [
+        {
+          "title": "Marketed as an 'Initial Coin Offering' or similar",
+          "description": "It is not possible to prevent some buyers from buying a token purely for speculation. However, marketing the token as an investment leads buyers to believe they can profit from holding or trading the token, rather than from using the token in the network. Using terms like 'Initial Coin Offering' or 'ICO', and investment-related language like ‘returns’ and ‘profits’ encourages buyers to buy a token for speculation, rather than use.",
+          "points": 50
+        }, {
+          "title": "Marketed as a Token Sale",
+          "description": "Marketed as a sale of tokens which give the right to access and use the network",
+          "points": 0
+        }, {
+          "title": "There is no economic return possible from using the network",
+          "description": "If there is genuinely no economic return possible for the token holders, then there is unlikely to be a common enterprise. This will be rare.",
+          "points": -100
+        }
+      ]
+    }
+  ]
+}
