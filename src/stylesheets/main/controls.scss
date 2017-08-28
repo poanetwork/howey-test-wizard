@@ -1,0 +1,110 @@
+button {
+  cursor: pointer;
+  transition: 0.3s background-color,
+              0.3s color;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+  transition: 0.3s opacity;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 15px 0 30px;
+  background-repeat: no-repeat;
+  color: #fff;
+  line-height: 36px;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &_continue {
+    background-color: #08b3f2;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAMAAACgaw2xAAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAD3RSTlMAPT5BSUpRUt3f5ufp6vUxUI2NAAAASUlEQVR42rWROw7AMAxC3abN3+b+t80WZYAxb/STsAR2kr0+xnAgEhMVwryhTLpjvg5CFOugTCXc/sGj1PM7d12irl0Plb3taRdkbQmzeFkz0wAAAABJRU5ErkJggg==);
+    background-size: 12px 10px;
+    background-position: left 10px center;
+  }
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-right: 30px;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input {
+  transition: 0.3s border-color;
+  outline: none;
+  width: 100%;
+  height: 36px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 0 10px;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+
+  &:focus {
+    border-color: #08b3f2;
+  }
+}
+
+.radio {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding: 30px 0 30px 45px;
+  border-top: 1px solid #eee;
+
+  $this: &;
+
+  input {
+    display: none;
+
+    &:checked + #{$this}-title:before {
+      background-color: #642f9c;
+    }
+  }
+
+  &-title {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -45px;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border: 5px solid #fff;
+      box-shadow: 0 0 0 1px #cdd5da;
+      border-radius: 50%;
+    }
+  }
+
+  &-description {
+    color: #8197a2;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}

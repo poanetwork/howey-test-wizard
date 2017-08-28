@@ -1,0 +1,46 @@
+@mixin image-2x($image, $width: 100%, $height: 100%) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+@mixin intro-outro($this) {
+  position: relative;
+  width: 620px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 240px;
+
+  &:before {
+    @include image-2x('./images/test@2x.png');
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/test.png);
+  }
+
+  #{$this}-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+
+    span {
+      color: #f4a720;
+    }
+  }
+
+  #{$this}-description {
+    margin-bottom: 20px;
+    color: #8197a2;
+    line-height: 24px;
+    font-size: 13px;
+  }
+}
