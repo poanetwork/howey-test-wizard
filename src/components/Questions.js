@@ -33,9 +33,12 @@ export class Questions extends Component {
     return (
       <div>
         <Progress questionsLength={this.questions.length}  currentQuestionId={this.state.currentQuestionId}/>
-        <section className="container tests">
-          <h1 className="tests-title">{question.title}</h1>
-          <div className="tests-list">{answersList}</div>
+        <div className="container">
+          <h1 className="questions-group-title">{question.groupTitle}</h1>
+        </div>
+        <section className="container questions">
+          <h1 className="questions-title">{question.title}</h1>
+          <div className="questions-list">{answersList}</div>
         </section>
         <div className="center">
           <Link className="button button_continue" to={continueLink}>Continue</Link>

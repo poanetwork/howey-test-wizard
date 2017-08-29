@@ -307,6 +307,27 @@ button {
     font-size: 11px;
     font-weight: bold; }
 
+.questions {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: #fff; }
+  .questions-group-title {
+    margin-bottom: 30px;
+    color: #cdd5da;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold; }
+  .questions-title {
+    display: block;
+    margin-bottom: 30px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold; }
+
 .socials {
   font-size: 0; }
   .socials .social {
@@ -354,21 +375,6 @@ button {
       width: 15px;
       height: 12px;
       background-position: 0 -57px; }
-
-.tests {
-  margin-bottom: 40px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-sizing: border-box;
-  padding: 30px;
-  background-color: #fff; }
-  .tests-title {
-    display: block;
-    margin-bottom: 30px;
-    line-height: 24px;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: bold; }
 
 @-webkit-keyframes show-tooltip {
   from {
