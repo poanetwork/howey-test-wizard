@@ -2,6 +2,7 @@
   "questions": [
     {
       "title": "Is there an investment of money?",
+      "groupTitle": "Investment of Money",
       "answers": [
         {
           "title": "There is no crowdsale. New tokens are given away for free, or are earned through mining",
@@ -15,6 +16,7 @@
       ]
     }, {
       "title": "What is the timing of the sale?",
+      "groupTitle": "Common Enterprise",
       "answers": [
         {
           "title": "Pre-deployment",
@@ -32,6 +34,7 @@
       ]
     }, {
       "title": "What do token holders have to do in order to get economic benefits from the network?",
+      "groupTitle": "Common Enterprise",
       "answers": [
         {
           "title": "All token holders will always receive the same returns",
@@ -45,6 +48,7 @@
       ]
     }, {
       "title": "What function does the token have?",
+      "groupTitle": "Expectation of Profit",
       "answers": [
         {
           "title": "Ownership or equity interest in a legal entity, including a general partnership",
@@ -78,6 +82,7 @@
       ]
     }, {
       "title": "Does the holder rely on manual, off-blockchain action to realize the benefit of the token?",
+      "groupTitle": "Expectation of Profit",
       "answers": [
         {
           "title": "Manual action is required outside of the network (e.g. off-blockchain) in order for the holder to get the benefit of the token",
@@ -91,6 +96,7 @@
       ]
     }, {
       "title": "What is the timing of the sale?",
+      "groupTitle": "Expectation of Profit",
       "answers": [
         {
           "title": "Pre-deployment",
@@ -108,6 +114,7 @@
       ]
     }, {
       "title": "Can the token holders exercise real and significant control via voting?",
+      "groupTitle": "Expectation of Profit",
       "answers": [
         {
           "title": "Token holders as a whole are able to control the development team’s access to funds",
@@ -121,6 +128,7 @@
       ]
     }, {
       "title": "How is the token sale marketed?",
+      "groupTitle": "Expectation of Profit",
       "answers": [
         {
           "title": "Marketed as an 'Initial Coin Offering' or similar",

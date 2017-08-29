@@ -1,10 +1,18 @@
-.tests {
+.questions {
   margin-bottom: 40px;
   border-radius: 8px;
   border: 1px solid #eee;
   box-sizing: border-box;
   padding: 30px;
   background-color: #fff;
+
+  &-group-title {
+    margin-bottom: 30px;
+    color: #cdd5da;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
 
   &-title {
     display: block;

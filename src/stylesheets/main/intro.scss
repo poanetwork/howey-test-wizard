@@ -1,3 +1,31 @@
 .intro {
-  @include intro-outro(&);
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 240px;
+
+  &:before {
+    @include image-2x('./images/test@2x.png');
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/test.png);
+  }
+
+  &-form {
+    @extend %clear;
+    margin-bottom: 20px;
+
+    &-i {
+      float: left;
+      width: 31%;
+
+      &:not(:last-child) {
+        margin-right: 3%;
+      }
+    }
+  }
 }
