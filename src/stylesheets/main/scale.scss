@@ -1,0 +1,23 @@
+.scale {
+  padding-left: 84px;
+
+  &-i {
+    color: #8197a2;
+    white-space: nowrap;
+    line-height: 20px;
+    font-size: 13px;
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+
+    &-value {
+      display: inline-block;
+      width: 130px;
+      margin-right: 20px;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}

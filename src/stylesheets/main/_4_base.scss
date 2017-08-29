@@ -24,6 +24,10 @@ body {
   background-color: #fbfbfc;
 }
 
+strong {
+  font-weight: bold;
+}
+
 #root,
 div[data-reactroot] {
   height: 100%;
@@ -48,11 +52,16 @@ div[data-reactroot] {
     vertical-align: middle;
     padding-top: 40px;
     padding-bottom: 40px;
+
+    .results & {
+      vertical-align: top;
+    }
   }
 }
 
 .title {
   margin-bottom: 20px;
+  text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
 }

@@ -27978,28 +27978,138 @@ var Results = exports.Results = function (_Component) {
         _react2.default.createElement(_Progress.Progress, { questionsLength: this.questions.length, currentQuestionId: this.questions.length + 1 }),
         _react2.default.createElement(
           'section',
-          { className: 'table container' },
+          { className: 'table results container' },
           _react2.default.createElement(
             'div',
             { className: 'table-cell' },
             _react2.default.createElement(
-              'div',
-              { className: 'outro' },
+              'h1',
+              { className: 'title' },
+              'Oracles Network',
               _react2.default.createElement(
-                'h1',
-                { className: 'outro-title' },
-                'LOREM IPSUM DOLOR'
-              ),
-              _react2.default.createElement(
-                'p',
-                { className: 'outro-description' },
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.'
-              ),
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'button button_continue', to: '/' },
-                'Try again'
+                'span',
+                { className: 'results-value' },
+                _react2.default.createElement('span', { className: 'indicator likely' }),
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  '70'
+                ),
+                'Very likely'
               )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'description' },
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'results-by-groups' },
+              _react2.default.createElement(
+                'div',
+                { className: 'results-by-groups-i' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'results-by-groups-title' },
+                  'Investment of Money'
+                ),
+                _react2.default.createElement('span', { className: 'indicator very-unlikely' }),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'results-by-groups-value' },
+                  '0'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'results-by-groups-i' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'results-by-groups-title' },
+                  'Common Enterprise'
+                ),
+                _react2.default.createElement('span', { className: 'indicator unlikely' }),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'results-by-groups-value' },
+                  '20'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'results-by-groups-i' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'results-by-groups-title' },
+                  'Expectation of Profit'
+                ),
+                _react2.default.createElement('span', { className: 'indicator equally' }),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'results-by-groups-value' },
+                  '50'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { className: 'button button_continue', to: '/' },
+              'Try again'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'table-cell scale' },
+            _react2.default.createElement(
+              'div',
+              { className: 'scale-i' },
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-value very-unlikely' },
+                '0 or less'
+              ),
+              'Very unlikely'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scale-i' },
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-value unlikely' },
+                '1 - 33'
+              ),
+              'Unlikely'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scale-i' },
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-value equally' },
+                '34 - 66'
+              ),
+              'Equally likely and unlikely'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scale-i' },
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-value likely' },
+                '67 - 99'
+              ),
+              'Likely'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scale-i' },
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-value very-likely' },
+                '100 or more'
+              ),
+              'Very likely'
             )
           )
         )

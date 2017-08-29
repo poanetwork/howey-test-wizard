@@ -1,0 +1,46 @@
+.results {
+  .indicator {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  &-value {
+    float: right;
+    font-weight: normal;
+
+    strong {
+      margin-right: 10px;
+    }
+
+    .indicator {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &-by-groups {
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+    }
+
+    &-i {
+      float: left;
+      width: 31%;
+
+      &:not(:last-child) {
+        margin-right: 3%;
+      }
+    }
+
+    &-title {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
