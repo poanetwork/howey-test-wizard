@@ -41,7 +41,6 @@ div[data-reactroot] {
 
 .table {
   display: table;
-  width: 100%;
   min-height: 100%;
 
   &-cell {
@@ -50,4 +49,17 @@ div[data-reactroot] {
     padding-top: 40px;
     padding-bottom: 40px;
   }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 20px;
+  color: #8197a2;
+  line-height: 24px;
+  font-size: 13px;
 }

@@ -8,3 +8,14 @@
   display: block;
   background-image: url(./images/logos.png);
 }
+
+%clear {
+  clear: both;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

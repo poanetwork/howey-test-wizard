@@ -7,50 +7,56 @@ export class Intro extends Component {
       <section className="table container">
         <div className="table-cell">
           <div className="intro">
-            <h1 className="intro-title">LOREM IPSUM DOLOR</h1>
-            <p className="intro-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              tempor incididunt ut labore et dolore magna aliqua.
+            <h1 className="title">LOREM IPSUM DOLOR</h1>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <form action="">
-              <label htmlFor="email" className="label">
-                Project name
-                <span className="tooltips-container">
-                  <span className="tooltips">
-                    <span className="tooltips-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                      tempor incididunt ut
+            <form action="" className="intro-form">
+              <div className="intro-form-i">
+                <label htmlFor="project-name" className="label">
+                  Project name
+                  <span className="tooltips-container">
+                    <span className="tooltips">
+                      <span className="tooltips-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut
+                      </span>
                     </span>
                   </span>
-                </span>
-              </label>
-              <input type="text" className="input" id="email"/>
-              <label htmlFor="project-name" className="label">
-                Project name
-                <span className="tooltips-container">
-                  <span className="tooltips">
-                    <span className="tooltips-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                      tempor incididunt ut
+                </label>
+                <input type="text" className="input" id="project-name"/>
+              </div>
+              <div className="intro-form-i">
+                <label htmlFor="email" className="label">
+                  Email
+                  <span className="tooltips-container">
+                    <span className="tooltips">
+                      <span className="tooltips-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut
+                      </span>
                     </span>
                   </span>
-                </span>
-              </label>
-              <input type="text" className="input" id="project-name"/>
-              <label htmlFor="project-url" className="label">
-                Project url
-                <span className="tooltips-container">
-                  <span className="tooltips">
-                    <span className="tooltips-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                      tempor incididunt ut
+                </label>
+                <input type="text" className="input" id="email"/>
+              </div>
+              <div className="intro-form-i">
+                <label htmlFor="project-url" className="label">
+                  Project url
+                  <span className="tooltips-container">
+                    <span className="tooltips">
+                      <span className="tooltips-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut
+                      </span>
                     </span>
                   </span>
-                </span>
-              </label>
-              <input type="text" className="input" id="project-url"/>
-              <Link className="button button_continue" to='/questions/1'>Start test</Link>
+                </label>
+                <input type="text" className="input" id="project-url"/>
+              </div>
             </form>
+            <Link className="button button_continue" to='/questions/1'>Start test</Link>
           </div>
         </div>
       </section>

@@ -10,6 +10,13 @@
       background-image: url("./images/logos@2x.png");
       background-size: 149px 59px; } }
 
+.intro-form {
+  clear: both; }
+  .intro-form:before, .intro-form:after {
+    content: "";
+    display: block;
+    clear: both; }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -77,13 +84,23 @@ div[data-reactroot] {
 
 .table {
   display: table;
-  width: 100%;
   min-height: 100%; }
   .table-cell {
     display: table-cell;
     vertical-align: middle;
     padding-top: 40px;
     padding-bottom: 40px; }
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold; }
+
+.description {
+  margin-bottom: 20px;
+  color: #8197a2;
+  line-height: 24px;
+  font-size: 13px; }
 
 button {
   cursor: pointer;
@@ -128,7 +145,6 @@ button {
   outline: none;
   width: 100%;
   height: 36px;
-  margin-bottom: 20px;
   border: 1px solid #eee;
   box-sizing: border-box;
   border-radius: 3px;
@@ -220,7 +236,6 @@ button {
 
 .intro {
   position: relative;
-  width: 620px;
   margin: 0 auto;
   box-sizing: border-box;
   padding-left: 240px; }
@@ -236,47 +251,13 @@ button {
       .intro:before {
         background-image: url("./images/test@2x.png");
         background-size: 100% 100%; } }
-  .intro .intro-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold; }
-    .intro .intro-title span {
-      color: #f4a720; }
-  .intro .intro-description {
-    margin-bottom: 20px;
-    color: #8197a2;
-    line-height: 24px;
-    font-size: 13px; }
-
-.outro {
-  position: relative;
-  width: 620px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding-left: 240px; }
-  .outro:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 200px;
-    background-image: url(./images/test.png); }
-    @media (min--moz-device-pixel-ratio: 1.3), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-      .outro:before {
-        background-image: url("./images/test@2x.png");
-        background-size: 100% 100%; } }
-  .outro .outro-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold; }
-    .outro .outro-title span {
-      color: #f4a720; }
-  .outro .outro-description {
-    margin-bottom: 20px;
-    color: #8197a2;
-    line-height: 24px;
-    font-size: 13px; }
+  .intro-form {
+    margin-bottom: 20px; }
+    .intro-form-i {
+      float: left;
+      width: 31%; }
+      .intro-form-i:not(:last-child) {
+        margin-right: 3%; }
 
 .progress {
   margin-bottom: 30px;
