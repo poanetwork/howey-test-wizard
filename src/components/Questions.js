@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import questions from '../questions';
 import { Progress } from './Progress';
+import PointsStore from '../stores/PointsStore';
 
 var animatedScrollTo = require('animated-scrollto');
 
 export class Questions extends Component {
   constructor(props) {
     super(props);
-    this.questions = questions.questions;
+    this.questionsLength = questions.questions.length;
     this.state = {
       currentQuestionId: props.match.params.questionId
-    }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,16 +22,38 @@ export class Questions extends Component {
   }
 
   componentDidUpdate() {
+    this.answerPoints = 0;
     animatedScrollTo(document.body, 0, 250);
+    console.log(PointsStore.totalPoints);
+  }
+
+  handleClick() {
+    const groupTitle = this.question.groupTitle.toLowerCase().split(' ').join('_');
+    PointsStore.calculatePoints(groupTitle, this.answerPoints);
+  }
+
+  handleChange(e) {
+    this.answerPoints = e.target.value;
+  }
+
+  continueLink() {
+    if (this.questionsLength == this.state.currentQuestionId) {
+      return '/results';
+    } else {
+      return `/questions/${parseInt(this.state.currentQuestionId, 10) + 1}`;
+    }
   }
 
   render() {
-    const question = this.questions[this.state.currentQuestionId - 1];
-    const nextQuestionId = parseInt(this.state.currentQuestionId, 10) + 1;
-    const continueLink = this.questions.length == this.state.currentQuestionId ? '/results' : `/questions/${nextQuestionId}`;
-    const answersList = question.answers.map((answer, index) => (
-      <label className="radio" key={index}>
-        <input type="radio" name="contract-type"/>
+    this.question = questions.questions[this.state.currentQuestionId - 1];
+    const answersList = this.question.answers.map((answer, index) => (
+      <label className="radio" key={`${answer.title}-${index}`}>
+        <input
+          type="radio"
+          name="answers"
+          value={answer.points}
+          onChange={this.handleChange.bind(this)}
+        />
         <span className="radio-title">{answer.title}</span>
         <span className="radio-description">{answer.description}</span>
       </label>
@@ -38,16 +61,22 @@ export class Questions extends Component {
 
     return (
       <div>
-        <Progress questionsLength={this.questions.length}  currentQuestionId={this.state.currentQuestionId}/>
+        <Progress questionsLength={this.questionsLength}  currentQuestionId={this.state.currentQuestionId}/>
         <div className="container">
-          <h1 className="questions-group-title">{question.groupTitle}</h1>
+          <h1 className="questions-group-title">{this.question.groupTitle}</h1>
         </div>
         <section className="container questions">
-          <h1 className="questions-title">{question.title}</h1>
+          <h1 className="questions-title">{this.question.title}</h1>
           <div className="questions-list">{answersList}</div>
         </section>
         <div className="center">
-          <Link className="button button_continue" to={continueLink}>Continue</Link>
+          <Link
+            className="button button_continue"
+            to={this.continueLink()}
+            onClick={this.handleClick.bind(this)}
+          >
+            Continue
+          </Link>
         </div>
       </div>
     );

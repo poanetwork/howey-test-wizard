@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PointsStore from '../stores/PointsStore';
 
 export class Intro extends Component {
   render() {
+    PointsStore.initializePoints();
     return (
       <section className="table container">
         <div className="table-cell">

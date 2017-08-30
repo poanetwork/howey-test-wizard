@@ -11941,7 +11941,7 @@ var Progress = exports.Progress = function (_Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(106);
-module.exports = __webpack_require__(241);
+module.exports = __webpack_require__(242);
 
 
 /***/ }),
@@ -24040,7 +24040,7 @@ Object.defineProperty(exports, 'Questions', {
   }
 });
 
-var _Results = __webpack_require__(240);
+var _Results = __webpack_require__(241);
 
 Object.defineProperty(exports, 'Results', {
   enumerable: true,
@@ -27674,6 +27674,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(20);
 
+var _PointsStore = __webpack_require__(247);
+
+var _PointsStore2 = _interopRequireDefault(_PointsStore);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27694,6 +27698,7 @@ var Intro = exports.Intro = function (_Component) {
   _createClass(Intro, [{
     key: 'render',
     value: function render() {
+      _PointsStore2.default.initializePoints();
       return _react2.default.createElement(
         'section',
         { className: 'table container' },
@@ -27826,6 +27831,10 @@ var _questions2 = _interopRequireDefault(_questions);
 
 var _Progress = __webpack_require__(104);
 
+var _PointsStore = __webpack_require__(247);
+
+var _PointsStore2 = _interopRequireDefault(_PointsStore);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27834,7 +27843,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var animatedScrollTo = __webpack_require__(258);
+var animatedScrollTo = __webpack_require__(240);
 
 var Questions = exports.Questions = function (_Component) {
   _inherits(Questions, _Component);
@@ -27844,7 +27853,7 @@ var Questions = exports.Questions = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Questions.__proto__ || Object.getPrototypeOf(Questions)).call(this, props));
 
-    _this.questions = _questions2.default.questions;
+    _this.questionsLength = _questions2.default.questions.length;
     _this.state = {
       currentQuestionId: props.match.params.questionId
     };
@@ -27861,19 +27870,46 @@ var Questions = exports.Questions = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
+      this.answerPoints = 0;
       animatedScrollTo(document.body, 0, 250);
+      console.log(_PointsStore2.default.totalPoints);
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      var groupTitle = this.question.groupTitle.toLowerCase().split(' ').join('_');
+      _PointsStore2.default.calculatePoints(groupTitle, this.answerPoints);
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(e) {
+      this.answerPoints = e.target.value;
+    }
+  }, {
+    key: 'continueLink',
+    value: function continueLink() {
+      if (this.questionsLength == this.state.currentQuestionId) {
+        return '/results';
+      } else {
+        return '/questions/' + (parseInt(this.state.currentQuestionId, 10) + 1);
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      var question = this.questions[this.state.currentQuestionId - 1];
-      var nextQuestionId = parseInt(this.state.currentQuestionId, 10) + 1;
-      var continueLink = this.questions.length == this.state.currentQuestionId ? '/results' : '/questions/' + nextQuestionId;
-      var answersList = question.answers.map(function (answer, index) {
+      var _this2 = this;
+
+      this.question = _questions2.default.questions[this.state.currentQuestionId - 1];
+      var answersList = this.question.answers.map(function (answer, index) {
         return _react2.default.createElement(
           'label',
-          { className: 'radio', key: index },
-          _react2.default.createElement('input', { type: 'radio', name: 'contract-type' }),
+          { className: 'radio', key: answer.title + '-' + index },
+          _react2.default.createElement('input', {
+            type: 'radio',
+            name: 'answers',
+            value: answer.points,
+            onChange: _this2.handleChange.bind(_this2)
+          }),
           _react2.default.createElement(
             'span',
             { className: 'radio-title' },
@@ -27890,14 +27926,14 @@ var Questions = exports.Questions = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Progress.Progress, { questionsLength: this.questions.length, currentQuestionId: this.state.currentQuestionId }),
+        _react2.default.createElement(_Progress.Progress, { questionsLength: this.questionsLength, currentQuestionId: this.state.currentQuestionId }),
         _react2.default.createElement(
           'div',
           { className: 'container' },
           _react2.default.createElement(
             'h1',
             { className: 'questions-group-title' },
-            question.groupTitle
+            this.question.groupTitle
           )
         ),
         _react2.default.createElement(
@@ -27906,7 +27942,7 @@ var Questions = exports.Questions = function (_Component) {
           _react2.default.createElement(
             'h1',
             { className: 'questions-title' },
-            question.title
+            this.question.title
           ),
           _react2.default.createElement(
             'div',
@@ -27919,7 +27955,11 @@ var Questions = exports.Questions = function (_Component) {
           { className: 'center' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: 'button button_continue', to: continueLink },
+            {
+              className: 'button button_continue',
+              to: this.continueLink(),
+              onClick: this.handleClick.bind(this)
+            },
             'Continue'
           )
         )
@@ -27932,6 +27972,70 @@ var Questions = exports.Questions = function (_Component) {
 
 /***/ }),
 /* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function (window) {
+    var requestAnimFrame = function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    }();
+
+    var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    var animatedScrollTo = function animatedScrollTo(element, to, duration, callback) {
+        var start = element.scrollTop,
+            change = to - start,
+            animationStart = +new Date();
+        var animating = true;
+        var lastpos = null;
+
+        var animateScroll = function animateScroll() {
+            if (!animating) {
+                return;
+            }
+            requestAnimFrame(animateScroll);
+            var now = +new Date();
+            var val = Math.floor(easeInOutQuad(now - animationStart, start, change, duration));
+            if (lastpos) {
+                if (lastpos === element.scrollTop) {
+                    lastpos = val;
+                    element.scrollTop = val;
+                } else {
+                    animating = false;
+                }
+            } else {
+                lastpos = val;
+                element.scrollTop = val;
+            }
+            if (now > animationStart + duration) {
+                element.scrollTop = to;
+                animating = false;
+                if (callback) {
+                    callback();
+                }
+            }
+        };
+        requestAnimFrame(animateScroll);
+    };
+
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+        module.exports = animatedScrollTo;
+    } else {
+        window.animatedScrollTo = animatedScrollTo;
+    }
+})(window);
+
+/***/ }),
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27955,6 +28059,10 @@ var _questions = __webpack_require__(103);
 var _questions2 = _interopRequireDefault(_questions);
 
 var _Progress = __webpack_require__(104);
+
+var _PointsStore = __webpack_require__(247);
+
+var _PointsStore2 = _interopRequireDefault(_PointsStore);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27996,13 +28104,13 @@ var Results = exports.Results = function (_Component) {
               _react2.default.createElement(
                 'span',
                 { className: 'results-value' },
-                _react2.default.createElement('span', { className: 'indicator likely' }),
+                _react2.default.createElement('span', { className: 'indicator ' + _PointsStore2.default.pointsToResult(_PointsStore2.default.totalResult()) }),
                 _react2.default.createElement(
                   'strong',
                   null,
-                  '70'
+                  _PointsStore2.default.totalResult()
                 ),
-                'Very likely'
+                _PointsStore2.default.pointsToResult(_PointsStore2.default.totalResult()).split("-").join(" ")
               )
             ),
             _react2.default.createElement(
@@ -28021,11 +28129,11 @@ var Results = exports.Results = function (_Component) {
                   { className: 'results-by-groups-title' },
                   'Investment of Money'
                 ),
-                _react2.default.createElement('span', { className: 'indicator very-unlikely' }),
+                _react2.default.createElement('span', { className: 'indicator ' + _PointsStore2.default.pointsToResult(_PointsStore2.default.totalPoints.investment_of_money) }),
                 _react2.default.createElement(
                   'span',
                   { className: 'results-by-groups-value' },
-                  '0'
+                  _PointsStore2.default.totalPoints.investment_of_money
                 )
               ),
               _react2.default.createElement(
@@ -28036,11 +28144,11 @@ var Results = exports.Results = function (_Component) {
                   { className: 'results-by-groups-title' },
                   'Common Enterprise'
                 ),
-                _react2.default.createElement('span', { className: 'indicator unlikely' }),
+                _react2.default.createElement('span', { className: 'indicator ' + _PointsStore2.default.pointsToResult(_PointsStore2.default.totalPoints.common_enterprise) }),
                 _react2.default.createElement(
                   'span',
                   { className: 'results-by-groups-value' },
-                  '20'
+                  _PointsStore2.default.totalPoints.common_enterprise
                 )
               ),
               _react2.default.createElement(
@@ -28051,11 +28159,11 @@ var Results = exports.Results = function (_Component) {
                   { className: 'results-by-groups-title' },
                   'Expectation of Profit'
                 ),
-                _react2.default.createElement('span', { className: 'indicator equally' }),
+                _react2.default.createElement('span', { className: 'indicator ' + _PointsStore2.default.pointsToResult(_PointsStore2.default.totalPoints.expectation_of_profit) }),
                 _react2.default.createElement(
                   'span',
                   { className: 'results-by-groups-value' },
-                  '50'
+                  _PointsStore2.default.totalPoints.expectation_of_profit
                 )
               )
             ),
@@ -28128,90 +28236,69 @@ var Results = exports.Results = function (_Component) {
 }(_react.Component);
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 242 */,
 /* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-(function (window) {
-    var requestAnimFrame = function () {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
-            window.setTimeout(callback, 1000 / 60);
-        };
-    }();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var PointsStore = {
+  totalPoints: {
+    investment_of_money: 0,
+    common_enterprise: 0,
+    expectation_of_profit: 0
+  },
 
-    var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
+  initializePoints: function initializePoints() {
+    this.totalPoints = {
+      investment_of_money: 0,
+      common_enterprise: 0,
+      expectation_of_profit: 0
     };
-
-    var animatedScrollTo = function animatedScrollTo(element, to, duration, callback) {
-        var start = element.scrollTop,
-            change = to - start,
-            animationStart = +new Date();
-        var animating = true;
-        var lastpos = null;
-
-        var animateScroll = function animateScroll() {
-            if (!animating) {
-                return;
-            }
-            requestAnimFrame(animateScroll);
-            var now = +new Date();
-            var val = Math.floor(easeInOutQuad(now - animationStart, start, change, duration));
-            if (lastpos) {
-                if (lastpos === element.scrollTop) {
-                    lastpos = val;
-                    element.scrollTop = val;
-                } else {
-                    animating = false;
-                }
-            } else {
-                lastpos = val;
-                element.scrollTop = val;
-            }
-            if (now > animationStart + duration) {
-                element.scrollTop = to;
-                animating = false;
-                if (callback) {
-                    callback();
-                }
-            }
-        };
-        requestAnimFrame(animateScroll);
-    };
-
-    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-        module.exports = animatedScrollTo;
-    } else {
-        window.animatedScrollTo = animatedScrollTo;
+  },
+  calculatePoints: function calculatePoints(group, points) {
+    this.totalPoints[group] += parseInt(points, 10);
+  },
+  pointsToResult: function pointsToResult(points) {
+    if (points <= 0) {
+      return "very-unlikely";
     }
-})(window);
+
+    if (points >= 1 && points <= 33) {
+      return "unlikely";
+    }
+
+    if (points >= 34 && points <= 66) {
+      return "equally";
+    }
+
+    if (points >= 67 && points <= 99) {
+      return "likely";
+    }
+
+    if (points >= 100) {
+      return "very-likely";
+    }
+  },
+  totalResult: function totalResult() {
+    return Math.min(this.totalPoints.investment_of_money, this.totalPoints.common_enterprise, this.totalPoints.expectation_of_profit);
+  }
+};
+
+exports.default = PointsStore;
 
 /***/ })
 /******/ ]);
