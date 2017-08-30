@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import questions from '../questions';
 import { Progress } from './Progress';
 
+var animatedScrollTo = require('animated-scrollto');
+
 export class Questions extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +18,10 @@ export class Questions extends Component {
     this.setState({
       currentQuestionId: nextProps.match.params.questionId
     });
+  }
+
+  componentDidUpdate() {
+    animatedScrollTo(document.body, 0, 250);
   }
 
   render() {

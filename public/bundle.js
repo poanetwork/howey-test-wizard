@@ -27834,6 +27834,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var animatedScrollTo = __webpack_require__(258);
+
 var Questions = exports.Questions = function (_Component) {
   _inherits(Questions, _Component);
 
@@ -27855,6 +27857,11 @@ var Questions = exports.Questions = function (_Component) {
       this.setState({
         currentQuestionId: nextProps.match.params.questionId
       });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      animatedScrollTo(document.body, 0, 250);
     }
   }, {
     key: 'render',
@@ -28125,6 +28132,86 @@ var Results = exports.Results = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function (window) {
+    var requestAnimFrame = function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    }();
+
+    var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    var animatedScrollTo = function animatedScrollTo(element, to, duration, callback) {
+        var start = element.scrollTop,
+            change = to - start,
+            animationStart = +new Date();
+        var animating = true;
+        var lastpos = null;
+
+        var animateScroll = function animateScroll() {
+            if (!animating) {
+                return;
+            }
+            requestAnimFrame(animateScroll);
+            var now = +new Date();
+            var val = Math.floor(easeInOutQuad(now - animationStart, start, change, duration));
+            if (lastpos) {
+                if (lastpos === element.scrollTop) {
+                    lastpos = val;
+                    element.scrollTop = val;
+                } else {
+                    animating = false;
+                }
+            } else {
+                lastpos = val;
+                element.scrollTop = val;
+            }
+            if (now > animationStart + duration) {
+                element.scrollTop = to;
+                animating = false;
+                if (callback) {
+                    callback();
+                }
+            }
+        };
+        requestAnimFrame(animateScroll);
+    };
+
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+        module.exports = animatedScrollTo;
+    } else {
+        window.animatedScrollTo = animatedScrollTo;
+    }
+})(window);
 
 /***/ })
 /******/ ]);
