@@ -11,7 +11,8 @@ export class Intro extends Component {
           <div className="intro">
             <h1 className="title">Howey Wizard</h1>
             <p className="description">
-              Howey test for blockchain tokens and crypto projects. Based of Coindesk's <a href="https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0">spreadsheet</a>
+              {"Howey test for blockchain tokens and crypto projects. Based of Coindesk's "}
+              <a href="https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0">spreadsheet</a>
             </p>
             <form action="" className="intro-form">
               <div className="intro-form-i">

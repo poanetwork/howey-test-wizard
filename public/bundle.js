@@ -27771,7 +27771,7 @@ var Intro = exports.Intro = function (_Component) {
             _react2.default.createElement(
               'p',
               { className: 'description' },
-              'Howey test for blockchain tokens and crypto projects. Based of Coindesk\'s ',
+              "Howey test for blockchain tokens and crypto projects. Based of Coindesk's ",
               _react2.default.createElement(
                 'a',
                 { href: 'https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0' },
