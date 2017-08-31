@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import questions from '../questions';
 import { Progress } from './Progress';
+import PointsStore from '../stores/PointsStore';
 
 export class Results extends Component {
   constructor(props) {
@@ -18,9 +19,9 @@ export class Results extends Component {
             <h1 className="title">
               Oracles Network
               <span className="results-value">
-                <span className="indicator likely"></span>
-                <strong>70</strong>
-                Very likely
+                <span className={`indicator ${PointsStore.pointsToResult(PointsStore.totalResult())}`}></span>
+                <strong>{PointsStore.totalResult()}</strong>
+                {PointsStore.pointsToResult(PointsStore.totalResult()).split("-").join(" ")}
               </span>
             </h1>
             <p className="description">
@@ -30,18 +31,18 @@ export class Results extends Component {
             <div className="results-by-groups">
               <div className="results-by-groups-i">
                 <p className="results-by-groups-title">Investment of Money</p>
-                <span className="indicator very-unlikely"></span>
-                <span className="results-by-groups-value">0</span>
+                <span className={`indicator ${PointsStore.pointsToResult(PointsStore.totalPoints.investment_of_money)}`}></span>
+                <span className="results-by-groups-value">{PointsStore.totalPoints.investment_of_money}</span>
               </div>
               <div className="results-by-groups-i">
                 <p className="results-by-groups-title">Common Enterprise</p>
-                <span className="indicator unlikely"></span>
-                <span className="results-by-groups-value">20</span>
+                <span className={`indicator ${PointsStore.pointsToResult(PointsStore.totalPoints.common_enterprise)}`}></span>
+                <span className="results-by-groups-value">{PointsStore.totalPoints.common_enterprise}</span>
               </div>
               <div className="results-by-groups-i">
                 <p className="results-by-groups-title">Expectation of Profit</p>
-                <span className="indicator equally"></span>
-                <span className="results-by-groups-value">50</span>
+                <span className={`indicator ${PointsStore.pointsToResult(PointsStore.totalPoints.expectation_of_profit)}`}></span>
+                <span className="results-by-groups-value">{PointsStore.totalPoints.expectation_of_profit}</span>
               </div>
             </div>
             <Link className="button button_continue" to="/">Try again</Link>
