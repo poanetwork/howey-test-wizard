@@ -4,8 +4,6 @@ import questions from '../questions';
 import { Progress } from './Progress';
 import PointsStore from '../stores/PointsStore';
 
-var animatedScrollTo = require('animated-scrollto');
-
 export class Questions extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +21,7 @@ export class Questions extends Component {
 
   componentDidUpdate() {
     this.answerPoints = 0;
-    animatedScrollTo(document.body, 0, 250);
+    window.scrollTo(0, 0);
     console.log(PointsStore.totalPoints);
   }
 
