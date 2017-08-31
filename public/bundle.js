@@ -27776,7 +27776,9 @@ var Intro = exports.Intro = function (_Component) {
                 'a',
                 { href: 'https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0' },
                 'spreadsheet'
-              )
+              ),
+              _react2.default.createElement('br', null),
+              'The Howey test has not yet been directly applied by the courts to any digital currency or blockchain token. The Howey test as applied by the courts does not involve any points-based calculation. The points system is intended as a guide - to highlight the characteristics of a token which are relevant to the securities law analysis.'
             ),
             _react2.default.createElement(
               'form',
@@ -28176,7 +28178,9 @@ var Results = exports.Results = function (_Component) {
             _react2.default.createElement(
               'p',
               { className: 'description' },
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+              'A token will only be a security if it satisfies all three elements. The higher the point score for each element, the more likely the element is to be satisfied.',
+              _react2.default.createElement('br', null),
+              'For many blockchain tokens, the first two elements of the Howey test are likely to be met. The third element has the most variables and the most different outcomes depending on the characteristics of the particular token.'
             ),
             _react2.default.createElement(
               'div',

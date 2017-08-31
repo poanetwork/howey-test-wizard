@@ -25,8 +25,9 @@ export class Results extends Component {
               </span>
             </h1>
             <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            A token will only be a security if it satisfies all three elements. The higher the point score for each element, the more likely the element is to be satisfied.
+            <br/>
+            For many blockchain tokens, the first two elements of the Howey test are likely to be met. The third element has the most variables and the most different outcomes depending on the characteristics of the particular token.
             </p>
             <div className="results-by-groups">
               <div className="results-by-groups-i">
