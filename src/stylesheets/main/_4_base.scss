@@ -24,6 +24,14 @@ body {
   background-color: #fbfbfc;
 }
 
+a {
+  color: #6d2eae;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 strong {
   font-weight: bold;
 }

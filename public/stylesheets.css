@@ -73,6 +73,11 @@ body {
   padding: 82px 0 60px;
   background-color: #fbfbfc; }
 
+a {
+  color: #6d2eae; }
+  a:hover {
+    text-decoration: none; }
+
 strong {
   font-weight: bold; }
 
