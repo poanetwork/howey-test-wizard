@@ -7,10 +7,9 @@ export class Intro extends Component {
       <section className="table container">
         <div className="table-cell">
           <div className="intro">
-            <h1 className="title">LOREM IPSUM DOLOR</h1>
+            <h1 className="title">Howey Wizard</h1>
             <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Howey test for blockchain tokens and crypto projects. Based of Coindesk's <a href="https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0">spreadsheet</a>
             </p>
             <form action="" className="intro-form">
               <div className="intro-form-i">
@@ -19,8 +18,7 @@ export class Intro extends Component {
                   <span className="tooltips-container">
                     <span className="tooltips">
                       <span className="tooltips-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut
+                        Name of a project. E.g. Oracles Network. Optional field.
                       </span>
                     </span>
                   </span>
@@ -33,8 +31,7 @@ export class Intro extends Component {
                   <span className="tooltips-container">
                     <span className="tooltips">
                       <span className="tooltips-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut
+                        Email of the project. E.g. hello@oracles.org. Optional field.
                       </span>
                     </span>
                   </span>
@@ -43,12 +40,11 @@ export class Intro extends Component {
               </div>
               <div className="intro-form-i">
                 <label htmlFor="project-url" className="label">
-                  Project url
+                  Project URL
                   <span className="tooltips-container">
                     <span className="tooltips">
                       <span className="tooltips-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut
+                      URL of the project. E.g. https://oracles.org. Optional field.
                       </span>
                     </span>
                   </span>
