@@ -1,7 +1,7 @@
 {
   "name": "howey-test",
   "version": "1.0.0",
-  "description": "Proof of Github",
+  "description": "Howey test",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",

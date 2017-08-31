@@ -9,7 +9,7 @@ export class Intro extends Component {
       <section className="table container">
         <div className="table-cell">
           <div className="intro">
-            <h1 className="title">Howey Wizard</h1>
+            <h1 className="title">Howey test wizard</h1>
             <p className="description">
               {"Howey test for blockchain tokens and crypto projects. Based of Coindesk's "}
               <a href="https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0">spreadsheet</a>

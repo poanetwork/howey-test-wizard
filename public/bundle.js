@@ -27703,7 +27703,7 @@ var Footer = exports.Footer = function Footer() {
         _react2.default.createElement('a', { href: 'https://twitter.com//oraclesorg', className: 'social social_twitter' }),
         _react2.default.createElement('a', { href: 'https://www.oracles.org', className: 'social social_oracles' }),
         _react2.default.createElement('a', { href: 'https://t.me/oraclesnetwork', className: 'social social_telegram' }),
-        _react2.default.createElement('a', { href: 'https://github.com/oraclesorg', className: 'social social_github' })
+        _react2.default.createElement('a', { href: 'https://github.com/oraclesorg/howey-test-wizard', className: 'social social_github' })
       )
     )
   );
@@ -27766,7 +27766,7 @@ var Intro = exports.Intro = function (_Component) {
             _react2.default.createElement(
               'h1',
               { className: 'title' },
-              'Howey Wizard'
+              'Howey test wizard'
             ),
             _react2.default.createElement(
               'p',
