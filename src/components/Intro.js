@@ -15,7 +15,7 @@ export class Intro extends Component {
               <a href="https://docs.google.com/spreadsheets/d/1QxOV2dgxO3C_TyVE0-41ZwLlzPmB-EE1NNshJGuedCU/htmlview#gid=0">spreadsheet</a>
               <br/>
               The Howey test has not yet been directly applied by the courts to any digital currency or blockchain token. The Howey test as applied by the courts does not involve any points-based calculation. The points system is intended as a guide - to highlight the characteristics of a token which are relevant to the securities law analysis. 
-              
+              <br/><b>THIS IS NOT A LEGAL ADVICE</b>
             </p>
             <form action="" className="intro-form">
               <div className="intro-form-i">
