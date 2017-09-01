@@ -15,6 +15,10 @@
     background-image: url(./images/test.png);
   }
 
+  .button {
+    margin-right: 20px;
+  }
+
   &-form {
     @extend %clear;
     margin-bottom: 20px;
@@ -25,6 +29,11 @@
 
       &:not(:last-child) {
         margin-right: 3%;
+      }
+
+      &.required .label:after {
+        content: "*";
+        color: #dc2163;
       }
     }
   }

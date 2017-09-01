@@ -116,6 +116,38 @@ div[data-reactroot] {
   line-height: 24px;
   font-size: 13px; }
 
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+.shake {
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
 .very-unlikely {
   background-color: #38ab6e; }
 
@@ -153,11 +185,14 @@ button {
   font-weight: bold; }
   .button:hover {
     opacity: 0.8; }
-  .button_continue {
-    background-color: #08b3f2;
+  .button_continue, .button_skip {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAMAAACgaw2xAAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAD3RSTlMAPT5BSUpRUt3f5ufp6vUxUI2NAAAASUlEQVR42rWROw7AMAxC3abN3+b+t80WZYAxb/STsAR2kr0+xnAgEhMVwryhTLpjvg5CFOugTCXc/sGj1PM7d12irl0Plb3taRdkbQmzeFkz0wAAAABJRU5ErkJggg==);
     background-size: 12px 10px;
     background-position: left 10px center; }
+  .button_continue {
+    background-color: #08b3f2; }
+  .button_skip {
+    background-color: #6d2eae; }
 
 .label {
   position: relative;
@@ -280,6 +315,8 @@ button {
       .intro:before {
         background-image: url("./images/test@2x.png");
         background-size: 100% 100%; } }
+  .intro .button {
+    margin-right: 20px; }
   .intro-form {
     margin-bottom: 20px; }
     .intro-form-i {
@@ -287,6 +324,9 @@ button {
       width: 31%; }
       .intro-form-i:not(:last-child) {
         margin-right: 3%; }
+      .intro-form-i.required .label:after {
+        content: "*";
+        color: #dc2163; }
 
 .progress {
   margin-bottom: 30px;
