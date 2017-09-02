@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import questions from '../questions';
 import { Progress } from './Progress';
 import PointsStore from '../stores/PointsStore';
+import { ValidationLink } from './Validation-link';
 
 export class Questions extends Component {
   constructor(props) {
     super(props);
     this.questionsLength = questions.questions.length;
     this.state = {
-      currentQuestionId: props.match.params.questionId
+      currentQuestionId: props.match.params.questionId,
+      answerPoints: null
     };
   }
 
@@ -19,10 +21,13 @@ export class Questions extends Component {
     });
   }
 
-  componentDidUpdate() {
-    this.answerPoints = 0;
-    window.scrollTo(0, 0);
-    console.log(PointsStore.totalPoints);
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.questionId !== prevProps.match.params.questionId) {
+      this.setState({
+        answerPoints: null
+      });
+      window.scrollTo(0, 0);
+    }
   }
 
   handleClick() {
@@ -31,7 +36,9 @@ export class Questions extends Component {
   }
 
   handleChange(e) {
-    this.answerPoints = e.target.value;
+    this.setState({
+      answerPoints: e.target.value
+    });
   }
 
   continueLink() {
@@ -68,13 +75,13 @@ export class Questions extends Component {
           <div className="questions-list">{answersList}</div>
         </section>
         <div className="center">
-          <Link
+          <ValidationLink
             className="button button_continue"
             to={this.continueLink()}
-            onClick={this.handleClick.bind(this)}
+            isValid={this.state.answerPoints === null ? false : true}
           >
             Continue
-          </Link>
+          </ValidationLink>
         </div>
       </div>
     );

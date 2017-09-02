@@ -29122,6 +29122,8 @@ var _PointsStore = __webpack_require__(65);
 
 var _PointsStore2 = _interopRequireDefault(_PointsStore);
 
+var _ValidationLink = __webpack_require__(250);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29140,7 +29142,8 @@ var Questions = exports.Questions = function (_Component) {
 
     _this.questionsLength = _questions2.default.questions.length;
     _this.state = {
-      currentQuestionId: props.match.params.questionId
+      currentQuestionId: props.match.params.questionId,
+      answerPoints: null
     };
     return _this;
   }
@@ -29154,10 +29157,13 @@ var Questions = exports.Questions = function (_Component) {
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.answerPoints = 0;
-      window.scrollTo(0, 0);
-      console.log(_PointsStore2.default.totalPoints);
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.match.params.questionId !== prevProps.match.params.questionId) {
+        this.setState({
+          answerPoints: null
+        });
+        window.scrollTo(0, 0);
+      }
     }
   }, {
     key: 'handleClick',
@@ -29168,7 +29174,9 @@ var Questions = exports.Questions = function (_Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(e) {
-      this.answerPoints = e.target.value;
+      this.setState({
+        answerPoints: e.target.value
+      });
     }
   }, {
     key: 'continueLink',
@@ -29239,11 +29247,11 @@ var Questions = exports.Questions = function (_Component) {
           'div',
           { className: 'center' },
           _react2.default.createElement(
-            _reactRouterDom.Link,
+            _ValidationLink.ValidationLink,
             {
               className: 'button button_continue',
               to: this.continueLink(),
-              onClick: this.handleClick.bind(this)
+              isValid: this.state.answerPoints === null ? false : true
             },
             'Continue'
           )
