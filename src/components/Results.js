@@ -5,10 +5,33 @@ import { Progress } from './Progress';
 import PointsStore from '../stores/PointsStore';
 import UserStore from '../stores/UserStore';
 
+const serialize = require('serialize-javascript');
+const Ajax = require('simple-ajax');
+
 export class Results extends Component {
   constructor(props) {
     super(props);
     this.questions = questions.questions;
+
+    var ajax = new Ajax(
+      {
+        url: 'complete-test',
+        method: 'POST',
+        headers: serialize({hello: "world"})
+      }
+    );
+
+    ajax.on('success', function(event) {
+      console.log('success', event);
+    });
+
+    ajax.on('error', function(event) {
+      console.log('error', event);
+    });
+
+    ajax.on('complete', function(event) {
+      console.log('complete', event);
+    });
   }
 
   render() {
