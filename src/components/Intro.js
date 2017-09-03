@@ -5,6 +5,7 @@ import Formsy from 'formsy-react';
 import Input from './Input';
 import { ValidationLink } from './Validation-link';
 import { Tooltip } from './Tooltip';
+import UserStore from '../stores/UserStore';
 
 export class Intro extends Component {
   constructor(props) {
@@ -15,10 +16,12 @@ export class Intro extends Component {
   }
 
   validForm() {
-    this.setState({formValid: true})
+    this.setState({formValid: true});
+    UserStore.user.projectName = this.refs.form.getModel().projectName;
   }
 
   invalidForm() {
+    UserStore.initializeUser();
     this.setState({formValid: false})
   }
 
@@ -38,13 +41,14 @@ export class Intro extends Component {
               <br/><strong>THIS IS NOT A LEGAL ADVICE</strong>
             </p>
             <Formsy.Form
+              ref="form"
               className="intro-form"
               onValid={this.validForm.bind(this)}
               onInvalid={this.invalidForm.bind(this)}
             >
               <Input
                 className="intro-form-i"
-                name="project-name"
+                name="projectName"
                 title="Project name"
                 value=""
                 required
@@ -63,7 +67,7 @@ export class Intro extends Component {
               </Input>
               <Input
                 className="intro-form-i"
-                name="project-url"
+                name="projectUrl"
                 title="Project URL"
                 value=""
                 required

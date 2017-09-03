@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import questions from '../questions';
 import { Progress } from './Progress';
 import PointsStore from '../stores/PointsStore';
+import UserStore from '../stores/UserStore';
 
 export class Results extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export class Results extends Component {
         <section className="table results container">
           <div className="table-cell">
             <h1 className="title">
-              Oracles Network
+              {UserStore.user.projectName}
               <span className="results-value">
                 <span className={`indicator ${PointsStore.pointsToResult(PointsStore.totalResult())}`}></span>
                 <strong>{PointsStore.totalResult()}</strong>

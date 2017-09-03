@@ -17,11 +17,16 @@ export class ValidationLink extends Component {
       });
     }
 
-    setTimeout(() => {
+    this.interval = setTimeout(() => {
       this.setState({
         animation: false
       });
     }, 800);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+    this.interval = false;
   }
 
   render() {
