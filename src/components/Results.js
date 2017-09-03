@@ -4,7 +4,7 @@ import questions from '../questions';
 import { Progress } from './Progress';
 import PointsStore from '../stores/PointsStore';
 import UserStore from '../stores/UserStore';
-import $ from "jquery";
+import 'whatwg-fetch';
 
 const serialize = require('serialize-javascript');
 
@@ -13,9 +13,10 @@ export class Results extends Component {
     super(props);
     this.questions = questions.questions;
 
-    $.post('complete', "hello=world&form-name=completed").then(function() {
-      alert("Thank you!");
-    });
+    fetch("complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "hello=world&form-name=completed"});
   }
 
   render() {
