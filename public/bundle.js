@@ -29362,7 +29362,7 @@ var Results = exports.Results = function (_Component) {
 
     _this.questions = _questions2.default.questions;
 
-    _jquery2.default.post('complete-test', serialize({ hello: "world", "form-name": "completed" })).then(function () {
+    _jquery2.default.post('complete', "hello=world&form-name=completed").then(function () {
       alert("Thank you!");
     });
     return _this;

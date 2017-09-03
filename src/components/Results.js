@@ -13,7 +13,7 @@ export class Results extends Component {
     super(props);
     this.questions = questions.questions;
 
-    $.post('complete-test', serialize({hello: "world", "form-name": "completed"})).then(function() {
+    $.post('complete', "hello=world&form-name=completed").then(function() {
       alert("Thank you!");
     });
   }
