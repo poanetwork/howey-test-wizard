@@ -12,11 +12,18 @@ export class Results extends Component {
   constructor(props) {
     super(props);
     this.questions = questions.questions;
+    let self = this;
 
     fetch("complete", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "hello=world&form-name=completed"});
+        body: self.encode({ "form-name": "completed", "hello": "world" })});
+  }
+
+  encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
   }
 
   render() {

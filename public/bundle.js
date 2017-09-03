@@ -29359,15 +29359,23 @@ var Results = exports.Results = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
 
     _this.questions = _questions2.default.questions;
+    var self = _this;
 
     fetch("complete", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: "hello=world&form-name=completed" });
+      body: self.encode({ "form-name": "completed", "hello": "world" }) });
     return _this;
   }
 
   _createClass(Results, [{
+    key: 'encode',
+    value: function encode(data) {
+      return Object.keys(data).map(function (key) {
+        return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
+      }).join("&");
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
