@@ -7629,6 +7629,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var PointsStore = {
+  answers: [],
   totalPoints: {
     investment_of_money: 0,
     common_enterprise: 0,
@@ -7644,6 +7645,9 @@ var PointsStore = {
   },
   calculatePoints: function calculatePoints(group, points) {
     this.totalPoints[group] += parseInt(points, 10);
+  },
+  setAnswers: function setAnswers(index, question, answer) {
+    this.answers[index] = question + ": " + answer;
   },
   pointsToResult: function pointsToResult(points) {
     if (points <= 0) {
@@ -13496,6 +13500,10 @@ var ValidationLink = exports.ValidationLink = function (_Component) {
     key: 'handleClick',
     value: function handleClick(e) {
       var _this2 = this;
+
+      if (this.props.onClick) {
+        this.props.onClick();
+      }
 
       if (!this.props.isValid) {
         e.preventDefault();
@@ -28681,7 +28689,7 @@ var Intro = exports.Intro = function (_Component) {
     key: 'validForm',
     value: function validForm() {
       this.setState({ formValid: true });
-      _UserStore2.default.user.projectName = this.refs.form.getModel().projectName;
+      _UserStore2.default.user = this.refs.form.getModel();
     }
   }, {
     key: 'invalidForm',
@@ -29210,11 +29218,12 @@ var Questions = exports.Questions = function (_Component) {
     key: 'handleClick',
     value: function handleClick() {
       var groupTitle = this.question.groupTitle.toLowerCase().split(' ').join('_');
-      _PointsStore2.default.calculatePoints(groupTitle, this.answerPoints);
+      _PointsStore2.default.calculatePoints(groupTitle, this.state.answerPoints);
     }
   }, {
     key: 'handleChange',
     value: function handleChange(e) {
+      _PointsStore2.default.setAnswers(this.state.currentQuestionId, this.question.title, e.target.getAttribute('data-answer'));
       this.setState({
         answerPoints: e.target.value
       });
@@ -29242,6 +29251,7 @@ var Questions = exports.Questions = function (_Component) {
             type: 'radio',
             name: 'answers',
             value: answer.points,
+            'data-answer': answer.title,
             onChange: _this2.handleChange.bind(_this2)
           }),
           _react2.default.createElement(
@@ -29292,7 +29302,8 @@ var Questions = exports.Questions = function (_Component) {
             {
               className: 'button button_continue',
               to: this.continueLink(),
-              isValid: this.state.answerPoints === null ? false : true
+              isValid: this.state.answerPoints === null ? false : true,
+              onClick: this.handleClick.bind(this)
             },
             'Continue'
           )
@@ -29364,7 +29375,7 @@ var Results = exports.Results = function (_Component) {
     fetch("complete", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: self.encode({ "form-name": "completed", "hello": "world" }) });
+      body: self.encode(Object.assign({ "form-name": "completed" }, _UserStore2.default.user, _PointsStore2.default.answers)) });
     return _this;
   }
 
@@ -29372,7 +29383,7 @@ var Results = exports.Results = function (_Component) {
     key: 'encode',
     value: function encode(data) {
       return Object.keys(data).map(function (key) {
-        return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
+        return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
       }).join("&");
     }
   }, {

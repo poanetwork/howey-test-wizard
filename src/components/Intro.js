@@ -17,7 +17,7 @@ export class Intro extends Component {
 
   validForm() {
     this.setState({formValid: true});
-    UserStore.user.projectName = this.refs.form.getModel().projectName;
+    UserStore.user = this.refs.form.getModel();
   }
 
   invalidForm() {

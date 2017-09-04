@@ -17,13 +17,13 @@ export class Results extends Component {
     fetch("complete", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: self.encode({ "form-name": "completed", "hello": "world" })});
+        body: self.encode(Object.assign({"form-name": "completed"}, UserStore.user, PointsStore.answers))});
   }
 
   encode(data) {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join("&");
   }
 
   render() {

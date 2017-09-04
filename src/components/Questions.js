@@ -32,10 +32,14 @@ export class Questions extends Component {
 
   handleClick() {
     const groupTitle = this.question.groupTitle.toLowerCase().split(' ').join('_');
-    PointsStore.calculatePoints(groupTitle, this.answerPoints);
+    PointsStore.calculatePoints(groupTitle, this.state.answerPoints);
   }
 
   handleChange(e) {
+    PointsStore.setAnswers(
+      this.state.currentQuestionId,
+      this.question.title,
+      e.target.getAttribute('data-answer'));
     this.setState({
       answerPoints: e.target.value
     });
@@ -57,6 +61,7 @@ export class Questions extends Component {
           type="radio"
           name="answers"
           value={answer.points}
+          data-answer={answer.title}
           onChange={this.handleChange.bind(this)}
         />
         <span className="radio-title">{answer.title}</span>
@@ -79,6 +84,7 @@ export class Questions extends Component {
             className="button button_continue"
             to={this.continueLink()}
             isValid={this.state.answerPoints === null ? false : true}
+            onClick={this.handleClick.bind(this)}
           >
             Continue
           </ValidationLink>

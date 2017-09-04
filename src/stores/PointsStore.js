@@ -1,4 +1,5 @@
 const PointsStore = {
+  answers: [],
   totalPoints: {
     investment_of_money: 0,
     common_enterprise: 0,
@@ -15,6 +16,10 @@ const PointsStore = {
 
   calculatePoints(group, points) {
     this.totalPoints[group] += parseInt(points, 10);
+  },
+
+  setAnswers(index, question, answer) {
+    this.answers[index] = `${question}: ${answer}`;
   },
 
   pointsToResult(points) {
