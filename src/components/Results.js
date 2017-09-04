@@ -17,7 +17,10 @@ export class Results extends Component {
     fetch("complete", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: self.encode(Object.assign({"form-name": "completed"}, UserStore.user, PointsStore.answers))});
+        body: self.encode(Object.assign({"Result": PointsStore.pointsToResult(PointsStore.totalResult())}, 
+                                        {"form-name": "completed"},
+                                        UserStore.user,
+                                        PointsStore.answers))});
   }
 
   encode(data) {
