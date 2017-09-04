@@ -1,15 +1,15 @@
 let UserStore = {
   user: {
-    "Project name": "Your token",
-    email: "",
-    "Project url": ""
+    "Project Name": "Your token",
+    Email: "",
+    "Project Url": ""
   },
 
   initializeUser() {
     this.user = {
-      "Project name": "Your token",
-      email: "",
-      "Project url": ""
+      "Project Name": "Your token",
+      Email: "",
+      "Project Url": ""
     }
   }
 }

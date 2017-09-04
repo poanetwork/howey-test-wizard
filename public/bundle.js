@@ -13556,16 +13556,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 var UserStore = {
   user: {
-    "Project name": "Your token",
-    email: "",
-    "Project url": ""
+    "Project Name": "Your token",
+    Email: "",
+    "Project Url": ""
   },
 
   initializeUser: function initializeUser() {
     this.user = {
-      "Project name": "Your token",
-      email: "",
-      "Project url": ""
+      "Project Name": "Your token",
+      Email: "",
+      "Project Url": ""
     };
   }
 };
@@ -29375,7 +29375,7 @@ var Results = exports.Results = function (_Component) {
     fetch("complete", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: self.encode(Object.assign({ "Result": _PointsStore2.default.pointsToResult(_PointsStore2.default.totalResult()) }, { "form-name": "completed" }, _UserStore2.default.user, _PointsStore2.default.answers)) });
+      body: self.encode(Object.assign({ "Result": _PointsStore2.default.totalResult() }, { "form-name": "completed" }, _UserStore2.default.user, _PointsStore2.default.answers)) });
     return _this;
   }
 
