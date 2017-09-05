@@ -41,6 +41,10 @@ div[data-reactroot] {
   height: 100%;
 }
 
+.netlify {
+  display: none;
+}
+
 .container {
   width: $container-width;
   margin: 0 auto;

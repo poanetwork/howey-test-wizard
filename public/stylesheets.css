@@ -82,6 +82,9 @@ strong {
 div[data-reactroot] {
   height: 100%; }
 
+.netlify {
+  display: none; }
+
 .container {
   width: 960px;
   margin: 0 auto; }
