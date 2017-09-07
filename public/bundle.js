@@ -1447,7 +1447,7 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(5);
 
 var CallbackQueue = __webpack_require__(80);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactFeatureFlags = __webpack_require__(81);
 var ReactReconciler = __webpack_require__(23);
 var Transaction = __webpack_require__(34);
@@ -1702,7 +1702,7 @@ module.exports = ReactUpdates;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var emptyFunction = __webpack_require__(11);
 var warning = __webpack_require__(2);
@@ -2175,6 +2175,86 @@ module.exports = DOMProperty;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.withRouter = exports.matchPath = exports.Switch = exports.StaticRouter = exports.Router = exports.Route = exports.Redirect = exports.Prompt = exports.NavLink = exports.MemoryRouter = exports.Link = exports.HashRouter = exports.BrowserRouter = undefined;
+
+var _BrowserRouter2 = __webpack_require__(218);
+
+var _BrowserRouter3 = _interopRequireDefault(_BrowserRouter2);
+
+var _HashRouter2 = __webpack_require__(221);
+
+var _HashRouter3 = _interopRequireDefault(_HashRouter2);
+
+var _Link2 = __webpack_require__(104);
+
+var _Link3 = _interopRequireDefault(_Link2);
+
+var _MemoryRouter2 = __webpack_require__(223);
+
+var _MemoryRouter3 = _interopRequireDefault(_MemoryRouter2);
+
+var _NavLink2 = __webpack_require__(226);
+
+var _NavLink3 = _interopRequireDefault(_NavLink2);
+
+var _Prompt2 = __webpack_require__(229);
+
+var _Prompt3 = _interopRequireDefault(_Prompt2);
+
+var _Redirect2 = __webpack_require__(231);
+
+var _Redirect3 = _interopRequireDefault(_Redirect2);
+
+var _Route2 = __webpack_require__(105);
+
+var _Route3 = _interopRequireDefault(_Route2);
+
+var _Router2 = __webpack_require__(61);
+
+var _Router3 = _interopRequireDefault(_Router2);
+
+var _StaticRouter2 = __webpack_require__(237);
+
+var _StaticRouter3 = _interopRequireDefault(_StaticRouter2);
+
+var _Switch2 = __webpack_require__(239);
+
+var _Switch3 = _interopRequireDefault(_Switch2);
+
+var _matchPath2 = __webpack_require__(241);
+
+var _matchPath3 = _interopRequireDefault(_matchPath2);
+
+var _withRouter2 = __webpack_require__(242);
+
+var _withRouter3 = _interopRequireDefault(_withRouter2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.BrowserRouter = _BrowserRouter3.default;
+exports.HashRouter = _HashRouter3.default;
+exports.Link = _Link3.default;
+exports.MemoryRouter = _MemoryRouter3.default;
+exports.NavLink = _NavLink3.default;
+exports.Prompt = _Prompt3.default;
+exports.Redirect = _Redirect3.default;
+exports.Route = _Route3.default;
+exports.Router = _Router3.default;
+exports.StaticRouter = _StaticRouter3.default;
+exports.Switch = _Switch3.default;
+exports.matchPath = _matchPath3.default;
+exports.withRouter = _withRouter3.default;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -2520,7 +2600,7 @@ module.exports = ReactElement;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2638,86 +2718,6 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.withRouter = exports.matchPath = exports.Switch = exports.StaticRouter = exports.Router = exports.Route = exports.Redirect = exports.Prompt = exports.NavLink = exports.MemoryRouter = exports.Link = exports.HashRouter = exports.BrowserRouter = undefined;
-
-var _BrowserRouter2 = __webpack_require__(218);
-
-var _BrowserRouter3 = _interopRequireDefault(_BrowserRouter2);
-
-var _HashRouter2 = __webpack_require__(221);
-
-var _HashRouter3 = _interopRequireDefault(_HashRouter2);
-
-var _Link2 = __webpack_require__(104);
-
-var _Link3 = _interopRequireDefault(_Link2);
-
-var _MemoryRouter2 = __webpack_require__(223);
-
-var _MemoryRouter3 = _interopRequireDefault(_MemoryRouter2);
-
-var _NavLink2 = __webpack_require__(226);
-
-var _NavLink3 = _interopRequireDefault(_NavLink2);
-
-var _Prompt2 = __webpack_require__(229);
-
-var _Prompt3 = _interopRequireDefault(_Prompt2);
-
-var _Redirect2 = __webpack_require__(231);
-
-var _Redirect3 = _interopRequireDefault(_Redirect2);
-
-var _Route2 = __webpack_require__(105);
-
-var _Route3 = _interopRequireDefault(_Route2);
-
-var _Router2 = __webpack_require__(61);
-
-var _Router3 = _interopRequireDefault(_Router2);
-
-var _StaticRouter2 = __webpack_require__(237);
-
-var _StaticRouter3 = _interopRequireDefault(_StaticRouter2);
-
-var _Switch2 = __webpack_require__(239);
-
-var _Switch3 = _interopRequireDefault(_Switch2);
-
-var _matchPath2 = __webpack_require__(241);
-
-var _matchPath3 = _interopRequireDefault(_matchPath2);
-
-var _withRouter2 = __webpack_require__(242);
-
-var _withRouter3 = _interopRequireDefault(_withRouter2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.BrowserRouter = _BrowserRouter3.default;
-exports.HashRouter = _HashRouter3.default;
-exports.Link = _Link3.default;
-exports.MemoryRouter = _MemoryRouter3.default;
-exports.NavLink = _NavLink3.default;
-exports.Prompt = _Prompt3.default;
-exports.Redirect = _Redirect3.default;
-exports.Route = _Route3.default;
-exports.Router = _Router3.default;
-exports.StaticRouter = _StaticRouter3.default;
-exports.Switch = _Switch3.default;
-exports.matchPath = _matchPath3.default;
-exports.withRouter = _withRouter3.default;
-
-/***/ }),
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2739,7 +2739,7 @@ var _assign = __webpack_require__(5);
 var ReactBaseClasses = __webpack_require__(68);
 var ReactChildren = __webpack_require__(116);
 var ReactDOMFactories = __webpack_require__(120);
-var ReactElement = __webpack_require__(18);
+var ReactElement = __webpack_require__(19);
 var ReactPropTypes = __webpack_require__(124);
 var ReactVersion = __webpack_require__(126);
 
@@ -7645,6 +7645,7 @@ var PointsStore = {
   },
   calculatePoints: function calculatePoints(group, points) {
     this.totalPoints[group] += parseInt(points, 10);
+    console.log(this.totalPoints);
   },
   setAnswers: function setAnswers(index, question, answer) {
     this.answers[index] = question + ": " + answer;
@@ -8239,7 +8240,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var ReactCurrentOwner = __webpack_require__(14);
 var ReactComponentTreeHook = __webpack_require__(10);
-var ReactElement = __webpack_require__(18);
+var ReactElement = __webpack_require__(19);
 
 var checkReactTypeSpec = __webpack_require__(121);
 
@@ -9929,7 +9930,7 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var invariant = __webpack_require__(1);
 
@@ -13472,7 +13473,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13651,7 +13652,7 @@ var Progress = exports.Progress = function (_Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(115);
-module.exports = __webpack_require__(255);
+module.exports = __webpack_require__(257);
 
 
 /***/ }),
@@ -13671,7 +13672,7 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _App = __webpack_require__(215);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13699,7 +13700,7 @@ _reactDom2.default.render(_react2.default.createElement(
 
 
 var PooledClass = __webpack_require__(117);
-var ReactElement = __webpack_require__(18);
+var ReactElement = __webpack_require__(19);
 
 var emptyFunction = __webpack_require__(11);
 var traverseAllChildren = __webpack_require__(118);
@@ -14259,7 +14260,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var ReactElement = __webpack_require__(18);
+var ReactElement = __webpack_require__(19);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -14582,7 +14583,7 @@ module.exports = ReactPropTypesSecret;
 
 
 
-var _require = __webpack_require__(18),
+var _require = __webpack_require__(19),
     isValidElement = _require.isValidElement;
 
 var factory = __webpack_require__(73);
@@ -14698,7 +14699,7 @@ module.exports = '15.6.1';
 var _require = __webpack_require__(68),
     Component = _require.Component;
 
-var _require2 = __webpack_require__(18),
+var _require2 = __webpack_require__(19),
     isValidElement = _require2.isValidElement;
 
 var ReactNoopUpdateQueue = __webpack_require__(69);
@@ -14724,7 +14725,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 var _prodInvariant = __webpack_require__(22);
 
-var ReactElement = __webpack_require__(18);
+var ReactElement = __webpack_require__(19);
 
 var invariant = __webpack_require__(1);
 
@@ -15456,7 +15457,7 @@ module.exports = BeforeInputEventPlugin;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var getTextContentAccessor = __webpack_require__(79);
 
@@ -21632,7 +21633,7 @@ module.exports = flattenChildren;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var Transaction = __webpack_require__(34);
 var ReactInstrumentation = __webpack_require__(12);
 var ReactServerUpdateQueue = __webpack_require__(179);
@@ -22322,7 +22323,7 @@ var _assign = __webpack_require__(5);
 
 var EventListener = __webpack_require__(96);
 var ExecutionEnvironment = __webpack_require__(7);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactUpdates = __webpack_require__(15);
 
@@ -22564,7 +22565,7 @@ module.exports = ReactInjection;
 var _assign = __webpack_require__(5);
 
 var CallbackQueue = __webpack_require__(80);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactBrowserEventEmitter = __webpack_require__(38);
 var ReactInputSelection = __webpack_require__(97);
 var ReactInstrumentation = __webpack_require__(12);
@@ -24946,7 +24947,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _index = __webpack_require__(216);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25034,7 +25035,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28593,7 +28594,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28641,7 +28642,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 var _PointsStore = __webpack_require__(65);
 
@@ -29159,7 +29160,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 var _questions = __webpack_require__(112);
 
@@ -29189,10 +29190,12 @@ var Questions = exports.Questions = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Questions.__proto__ || Object.getPrototypeOf(Questions)).call(this, props));
 
+    window.scrollTo(0, 0);
     _this.questionsLength = _questions2.default.questions.length;
     _this.state = {
       currentQuestionId: props.match.params.questionId,
-      answerPoints: null
+      answerPoints: null,
+      answerTitle: ''
     };
     return _this;
   }
@@ -29223,10 +29226,11 @@ var Questions = exports.Questions = function (_Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(e) {
-      _PointsStore2.default.setAnswers(this.state.currentQuestionId, this.question.title, e.target.getAttribute('data-answer'));
       this.setState({
-        answerPoints: e.target.value
+        answerPoints: e.target.value,
+        answerTitle: e.target.getAttribute('data-answer')
       });
+      _PointsStore2.default.setAnswers(this.state.currentQuestionId, this.question.title, e.target.getAttribute('data-answer'));
     }
   }, {
     key: 'continueLink',
@@ -29249,9 +29253,9 @@ var Questions = exports.Questions = function (_Component) {
           { className: 'radio', key: answer.title + '-' + index },
           _react2.default.createElement('input', {
             type: 'radio',
-            name: 'answers',
             value: answer.points,
             'data-answer': answer.title,
+            checked: _this2.state.answerTitle === answer.title,
             onChange: _this2.handleChange.bind(_this2)
           }),
           _react2.default.createElement(
@@ -29333,7 +29337,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(20);
+var _reactRouterDom = __webpack_require__(18);
 
 var _questions = __webpack_require__(112);
 
@@ -29349,7 +29353,7 @@ var _UserStore = __webpack_require__(111);
 
 var _UserStore2 = _interopRequireDefault(_UserStore);
 
-__webpack_require__(310);
+__webpack_require__(255);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29359,7 +29363,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var serialize = __webpack_require__(260);
+var serialize = __webpack_require__(256);
 
 var Results = exports.Results = function (_Component) {
   _inherits(Results, _Component);
@@ -29541,191 +29545,6 @@ var Results = exports.Results = function (_Component) {
 
 /***/ }),
 /* 255 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*
-Copyright (c) 2014, Yahoo! Inc. All rights reserved.
-Copyrights licensed under the New BSD License.
-See the accompanying LICENSE file for terms.
-*/
-
-
-
-// Generate an internal UID to make the regexp pattern harder to guess.
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var UID = Math.floor(Math.random() * 0x10000000000).toString(16);
-var PLACE_HOLDER_REGEXP = new RegExp('"@__(F|R|D)-' + UID + '-(\\d+)__@"', 'g');
-
-var IS_NATIVE_CODE_REGEXP = /\{\s*\[native code\]\s*\}/g;
-var UNSAFE_CHARS_REGEXP = /[<>\/\u2028\u2029]/g;
-
-// Mapping of unsafe HTML and invalid JavaScript line terminator chars to their
-// Unicode char counterparts which are safe to use in JavaScript strings.
-var ESCAPED_CHARS = {
-    '<': '\\u003C',
-    '>': '\\u003E',
-    '/': '\\u002F',
-    '\u2028': '\\u2028',
-    '\u2029': '\\u2029'
-};
-
-function escapeUnsafeChars(unsafeChar) {
-    return ESCAPED_CHARS[unsafeChar];
-}
-
-module.exports = function serialize(obj, options) {
-    options || (options = {});
-
-    // Backwards-compatability for `space` as the second argument.
-    if (typeof options === 'number' || typeof options === 'string') {
-        options = { space: options };
-    }
-
-    var functions = [];
-    var regexps = [];
-    var dates = [];
-
-    // Returns placeholders for functions and regexps (identified by index)
-    // which are later replaced by their string representation.
-    function replacer(key, value) {
-        if (!value) {
-            return value;
-        }
-
-        // If the value is an object w/ a toJSON method, toJSON is called before
-        // the replacer runs, so we use this[key] to get the non-toJSONed value.
-        var origValue = this[key];
-        var type = typeof origValue === 'undefined' ? 'undefined' : _typeof(origValue);
-
-        if (type === 'object') {
-            if (origValue instanceof RegExp) {
-                return '@__R-' + UID + '-' + (regexps.push(origValue) - 1) + '__@';
-            }
-
-            if (origValue instanceof Date) {
-                return '@__D-' + UID + '-' + (dates.push(origValue) - 1) + '__@';
-            }
-        }
-
-        if (type === 'function') {
-            return '@__F-' + UID + '-' + (functions.push(origValue) - 1) + '__@';
-        }
-
-        return value;
-    }
-
-    var str;
-
-    // Creates a JSON string representation of the value.
-    // NOTE: Node 0.12 goes into slow mode with extra JSON.stringify() args.
-    if (options.isJSON && !options.space) {
-        str = JSON.stringify(obj);
-    } else {
-        str = JSON.stringify(obj, options.isJSON ? null : replacer, options.space);
-    }
-
-    // Protects against `JSON.stringify()` returning `undefined`, by serializing
-    // to the literal string: "undefined".
-    if (typeof str !== 'string') {
-        return String(str);
-    }
-
-    // Replace unsafe HTML and invalid JavaScript line terminator chars with
-    // their safe Unicode char counterpart. This _must_ happen before the
-    // regexps and functions are serialized and added back to the string.
-    str = str.replace(UNSAFE_CHARS_REGEXP, escapeUnsafeChars);
-
-    if (functions.length === 0 && regexps.length === 0 && dates.length === 0) {
-        return str;
-    }
-
-    // Replaces all occurrences of function, regexp and date placeholders in the
-    // JSON string with their string representations. If the original value can
-    // not be found, then `undefined` is used.
-    return str.replace(PLACE_HOLDER_REGEXP, function (match, type, valueIndex) {
-        if (type === 'D') {
-            return "new Date(\"" + dates[valueIndex].toISOString() + "\")";
-        }
-
-        if (type === 'R') {
-            return regexps[valueIndex].toString();
-        }
-
-        var fn = functions[valueIndex];
-        var serializedFn = fn.toString();
-
-        if (IS_NATIVE_CODE_REGEXP.test(serializedFn)) {
-            throw new TypeError('Serializing native function: ' + fn.name);
-        }
-
-        return serializedFn;
-    });
-};
-
-/***/ }),
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30188,6 +30007,138 @@ module.exports = function serialize(obj, options) {
   };
   self.fetch.polyfill = true;
 })(typeof self !== 'undefined' ? self : undefined);
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+
+
+// Generate an internal UID to make the regexp pattern harder to guess.
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var UID = Math.floor(Math.random() * 0x10000000000).toString(16);
+var PLACE_HOLDER_REGEXP = new RegExp('"@__(F|R|D)-' + UID + '-(\\d+)__@"', 'g');
+
+var IS_NATIVE_CODE_REGEXP = /\{\s*\[native code\]\s*\}/g;
+var UNSAFE_CHARS_REGEXP = /[<>\/\u2028\u2029]/g;
+
+// Mapping of unsafe HTML and invalid JavaScript line terminator chars to their
+// Unicode char counterparts which are safe to use in JavaScript strings.
+var ESCAPED_CHARS = {
+    '<': '\\u003C',
+    '>': '\\u003E',
+    '/': '\\u002F',
+    '\u2028': '\\u2028',
+    '\u2029': '\\u2029'
+};
+
+function escapeUnsafeChars(unsafeChar) {
+    return ESCAPED_CHARS[unsafeChar];
+}
+
+module.exports = function serialize(obj, options) {
+    options || (options = {});
+
+    // Backwards-compatability for `space` as the second argument.
+    if (typeof options === 'number' || typeof options === 'string') {
+        options = { space: options };
+    }
+
+    var functions = [];
+    var regexps = [];
+    var dates = [];
+
+    // Returns placeholders for functions and regexps (identified by index)
+    // which are later replaced by their string representation.
+    function replacer(key, value) {
+        if (!value) {
+            return value;
+        }
+
+        // If the value is an object w/ a toJSON method, toJSON is called before
+        // the replacer runs, so we use this[key] to get the non-toJSONed value.
+        var origValue = this[key];
+        var type = typeof origValue === 'undefined' ? 'undefined' : _typeof(origValue);
+
+        if (type === 'object') {
+            if (origValue instanceof RegExp) {
+                return '@__R-' + UID + '-' + (regexps.push(origValue) - 1) + '__@';
+            }
+
+            if (origValue instanceof Date) {
+                return '@__D-' + UID + '-' + (dates.push(origValue) - 1) + '__@';
+            }
+        }
+
+        if (type === 'function') {
+            return '@__F-' + UID + '-' + (functions.push(origValue) - 1) + '__@';
+        }
+
+        return value;
+    }
+
+    var str;
+
+    // Creates a JSON string representation of the value.
+    // NOTE: Node 0.12 goes into slow mode with extra JSON.stringify() args.
+    if (options.isJSON && !options.space) {
+        str = JSON.stringify(obj);
+    } else {
+        str = JSON.stringify(obj, options.isJSON ? null : replacer, options.space);
+    }
+
+    // Protects against `JSON.stringify()` returning `undefined`, by serializing
+    // to the literal string: "undefined".
+    if (typeof str !== 'string') {
+        return String(str);
+    }
+
+    // Replace unsafe HTML and invalid JavaScript line terminator chars with
+    // their safe Unicode char counterpart. This _must_ happen before the
+    // regexps and functions are serialized and added back to the string.
+    str = str.replace(UNSAFE_CHARS_REGEXP, escapeUnsafeChars);
+
+    if (functions.length === 0 && regexps.length === 0 && dates.length === 0) {
+        return str;
+    }
+
+    // Replaces all occurrences of function, regexp and date placeholders in the
+    // JSON string with their string representations. If the original value can
+    // not be found, then `undefined` is used.
+    return str.replace(PLACE_HOLDER_REGEXP, function (match, type, valueIndex) {
+        if (type === 'D') {
+            return "new Date(\"" + dates[valueIndex].toISOString() + "\")";
+        }
+
+        if (type === 'R') {
+            return regexps[valueIndex].toString();
+        }
+
+        var fn = functions[valueIndex];
+        var serializedFn = fn.toString();
+
+        if (IS_NATIVE_CODE_REGEXP.test(serializedFn)) {
+            throw new TypeError('Serializing native function: ' + fn.name);
+        }
+
+        return serializedFn;
+    });
+};
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

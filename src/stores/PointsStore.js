@@ -16,6 +16,7 @@ const PointsStore = {
 
   calculatePoints(group, points) {
     this.totalPoints[group] += parseInt(points, 10);
+    console.log(this.totalPoints);
   },
 
   setAnswers(index, question, answer) {

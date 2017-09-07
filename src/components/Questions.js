@@ -8,10 +8,12 @@ import { ValidationLink } from './Validation-link';
 export class Questions extends Component {
   constructor(props) {
     super(props);
+    window.scrollTo(0, 0);
     this.questionsLength = questions.questions.length;
     this.state = {
       currentQuestionId: props.match.params.questionId,
-      answerPoints: null
+      answerPoints: null,
+      answerTitle: ''
     };
   }
 
@@ -36,13 +38,14 @@ export class Questions extends Component {
   }
 
   handleChange(e) {
+    this.setState({
+      answerPoints: e.target.value,
+      answerTitle: e.target.getAttribute('data-answer')
+    });
     PointsStore.setAnswers(
       this.state.currentQuestionId,
       this.question.title,
       e.target.getAttribute('data-answer'));
-    this.setState({
-      answerPoints: e.target.value
-    });
   }
 
   continueLink() {
@@ -59,9 +62,9 @@ export class Questions extends Component {
       <label className="radio" key={`${answer.title}-${index}`}>
         <input
           type="radio"
-          name="answers"
           value={answer.points}
           data-answer={answer.title}
+          checked={this.state.answerTitle === answer.title}
           onChange={this.handleChange.bind(this)}
         />
         <span className="radio-title">{answer.title}</span>
