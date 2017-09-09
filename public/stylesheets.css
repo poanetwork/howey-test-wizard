@@ -240,6 +240,7 @@ button {
     border-color: #08b3f2; }
 
 .radio {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   position: relative;
   display: block;

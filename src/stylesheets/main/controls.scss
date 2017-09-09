@@ -71,6 +71,7 @@ button {
 }
 
 .radio {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   position: relative;
   display: block;
