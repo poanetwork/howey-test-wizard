@@ -13502,7 +13502,7 @@ var ValidationLink = exports.ValidationLink = function (_Component) {
     value: function handleClick(e) {
       var _this2 = this;
 
-      if (this.props.onClick) {
+      if (this.props.onClick && this.props.isValid) {
         this.props.onClick();
       }
 

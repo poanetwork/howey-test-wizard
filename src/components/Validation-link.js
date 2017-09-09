@@ -10,8 +10,8 @@ export class ValidationLink extends Component {
   }
 
   handleClick(e) {
-    if (this.props.onClick) {
-      this.props.onClick();  
+    if (this.props.onClick && this.props.isValid) {
+      this.props.onClick();
     }
 
     if (!this.props.isValid) {
