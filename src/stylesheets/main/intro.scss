@@ -4,15 +4,32 @@
   box-sizing: border-box;
   padding-left: 240px;
 
+  @media screen and (max-width: $tablet-width) {
+    padding-left: 0;
+    padding-top: 140px;
+  }
+
   &:before {
+    $_size: 200px;
+
     @include image-2x('./images/test@2x.png');
     content: '';
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px;
-    height: 200px;
+    width: $_size;
+    height: $_size;
     background-image: url(./images/test.png);
+
+    @media screen and (max-width: $tablet-width) {
+      $_size: 120px;
+
+      width: $_size;
+      height: $_size;
+      left: 50%;
+      margin-left: -#{$_size / 2};
+      background-size: 100%;
+    }
   }
 
   .button {
@@ -27,8 +44,18 @@
       float: left;
       width: 31%;
 
+      @media screen and (max-width: ($mobile-width + 200px)) {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
       &:not(:last-child) {
         margin-right: 3%;
+
+        @media screen and (max-width: ($mobile-width + 200px)) {
+          margin-right: 0;
+        }
       }
 
       &.required .label:after {

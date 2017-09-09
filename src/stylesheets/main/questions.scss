@@ -6,12 +6,20 @@
   padding: 30px;
   background-color: #fff;
 
+  @media screen and (max-width: $mobile-width) {
+    padding: 20px;
+  }
+
   &-group-title {
     margin-bottom: 30px;
     color: #cdd5da;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
+
+    @media screen and (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
   }
 
   &-title {
@@ -21,5 +29,9 @@
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
+
+    @media screen and (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
   }
 }

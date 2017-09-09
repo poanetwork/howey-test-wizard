@@ -65,10 +65,12 @@ html {
 body {
   position: relative;
   width: 100%;
-  min-width: 980px;
   box-sizing: border-box;
   padding: 82px 0 60px;
   background-color: #fbfbfc; }
+  @media screen and (max-width: 768px) {
+    body {
+      padding-bottom: 80px; } }
 
 a {
   color: #6d2eae; }
@@ -88,6 +90,9 @@ div[data-reactroot] {
 .container {
   width: 960px;
   margin: 0 auto; }
+  @media screen and (max-width: 970px) {
+    .container {
+      width: 98%; } }
 
 .center {
   margin-bottom: 40px;
@@ -109,12 +114,27 @@ div[data-reactroot] {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: bold; }
+  @media screen and (max-width: 768px) {
+    .title {
+      text-align: center;
+      font-size: 22px; } }
+  @media screen and (max-width: 414px) {
+    .title {
+      margin-bottom: 10px;
+      font-size: 20px; } }
 
 .description {
   margin-bottom: 20px;
   color: #8197a2;
   line-height: 24px;
   font-size: 13px; }
+  @media screen and (max-width: 768px) {
+    .description {
+      text-align: center; } }
+  @media screen and (max-width: 414px) {
+    .description {
+      margin-bottom: 10px;
+      font-size: 12px; } }
 
 @-webkit-keyframes shake {
   10%, 90% {
@@ -260,6 +280,9 @@ button {
   background-size: cover;
   background-position: center center;
   color: #fff; }
+  @media screen and (max-width: 768px) {
+    .footer {
+      height: 80px; } }
   .footer .container {
     position: relative; }
   .footer .logo,
@@ -269,6 +292,12 @@ button {
     position: absolute;
     z-index: 1;
     top: 50%; }
+    @media screen and (max-width: 768px) {
+      .footer .logo,
+      .footer .socials {
+        -webkit-transform: translate(0);
+                transform: translate(0);
+        top: 20px; } }
   .footer .logo {
     left: 0;
     width: 100px;
@@ -279,6 +308,10 @@ button {
     line-height: 60px;
     text-align: center;
     font-size: 12px; }
+    @media screen and (max-width: 768px) {
+      .footer .rights {
+        padding-top: 60px;
+        line-height: 20px; } }
   .footer .socials {
     right: 0; }
 
@@ -295,6 +328,9 @@ button {
     width: 149px;
     height: 35px;
     background-position: 0 -24px; }
+    @media screen and (max-width: 768px) {
+      .header .logo {
+        margin: 0 auto; } }
   .header .button {
     float: right; }
 
@@ -303,6 +339,10 @@ button {
   margin: 0 auto;
   box-sizing: border-box;
   padding-left: 240px; }
+  @media screen and (max-width: 768px) {
+    .intro {
+      padding-left: 0;
+      padding-top: 140px; } }
   .intro:before {
     content: '';
     position: absolute;
@@ -315,6 +355,13 @@ button {
       .intro:before {
         background-image: url("./images/test@2x.png");
         background-size: 100% 100%; } }
+    @media screen and (max-width: 768px) {
+      .intro:before {
+        width: 120px;
+        height: 120px;
+        left: 50%;
+        margin-left: -60px;
+        background-size: 100%; } }
   .intro .button {
     margin-right: 20px; }
   .intro-form {
@@ -322,8 +369,16 @@ button {
     .intro-form-i {
       float: left;
       width: 31%; }
+      @media screen and (max-width: 614px) {
+        .intro-form-i {
+          float: none;
+          width: 100%;
+          margin-bottom: 10px; } }
       .intro-form-i:not(:last-child) {
         margin-right: 3%; }
+        @media screen and (max-width: 614px) {
+          .intro-form-i:not(:last-child) {
+            margin-right: 0; } }
       .intro-form-i.required .label:after {
         content: "*";
         color: #dc2163; }
@@ -339,7 +394,8 @@ button {
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    overflow: hidden; }
   .progress-i {
     position: relative;
     width: 20px;
@@ -360,21 +416,24 @@ button {
     .progress-i_active:not(:first-child):before, .progress-i_active:not(:last-child):after,
     .progress-i_active .progress-step:before {
       background-color: #08b3f2; }
-  .progress-step:before {
-    transition: 0.3s background-color;
-    content: attr(data-step);
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    background-color: #cdd5da;
-    color: #fff;
-    line-height: 20px;
-    text-align: center;
-    font-size: 11px;
-    font-weight: bold; }
+  .progress-step {
+    position: relative;
+    z-index: 2; }
+    .progress-step:before {
+      transition: 0.3s background-color;
+      content: attr(data-step);
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      background-color: #cdd5da;
+      color: #fff;
+      line-height: 20px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold; }
 
 .questions {
   margin-bottom: 40px;
@@ -383,12 +442,18 @@ button {
   box-sizing: border-box;
   padding: 30px;
   background-color: #fff; }
+  @media screen and (max-width: 414px) {
+    .questions {
+      padding: 20px; } }
   .questions-group-title {
     margin-bottom: 30px;
     color: #cdd5da;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold; }
+    @media screen and (max-width: 414px) {
+      .questions-group-title {
+        margin-bottom: 20px; } }
   .questions-title {
     display: block;
     margin-bottom: 30px;
@@ -396,11 +461,32 @@ button {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold; }
+    @media screen and (max-width: 414px) {
+      .questions-title {
+        margin-bottom: 20px; } }
 
 .results .indicator {
   display: inline-block;
   margin-right: 10px;
   border-radius: 50%; }
+
+@media screen and (max-width: 414px) {
+  .results .title {
+    font-size: 16px; } }
+
+@media screen and (max-width: 768px) {
+  .results .title,
+  .results .description {
+    text-align: left; } }
+
+@media screen and (max-width: 970px) {
+  .results .table,
+  .results .table-cell {
+    display: block; } }
+
+@media screen and (max-width: 970px) {
+  .results .table-cell {
+    padding: 20px 0; } }
 
 .results-value {
   float: right;
@@ -408,6 +494,7 @@ button {
   .results-value strong {
     margin-right: 10px; }
   .results-value .indicator {
+    vertical-align: bottom;
     width: 18px;
     height: 18px; }
 
@@ -429,11 +516,34 @@ button {
 
 .scale {
   padding-left: 84px; }
+  @media screen and (max-width: 970px) {
+    .scale {
+      padding-left: 0;
+      font-size: 0; } }
   .scale-i {
     color: #8197a2;
     white-space: nowrap;
     line-height: 20px;
     font-size: 13px; }
+    @media screen and (max-width: 970px) {
+      .scale-i {
+        width: 20%;
+        display: inline-block;
+        padding: 0 10px;
+        box-sizing: border-box;
+        text-align: center; } }
+    @media screen and (max-width: 840px) {
+      .scale-i {
+        width: 25%; } }
+    @media screen and (max-width: 660px) {
+      .scale-i {
+        width: 33.33%; } }
+    @media screen and (max-width: 540px) {
+      .scale-i {
+        width: 50%; } }
+    @media screen and (max-width: 970px) {
+      .scale-i {
+        margin-bottom: 18px; } }
     .scale-i:not(:last-child) {
       margin-bottom: 18px; }
     .scale-i-value {
@@ -443,6 +553,14 @@ button {
       border-radius: 10px;
       color: #fff;
       text-align: center; }
+      @media screen and (max-width: 970px) {
+        .scale-i-value {
+          display: inline-block;
+          margin-right: 0;
+          margin-bottom: 10px; } }
+    @media screen and (max-width: 970px) {
+      .scale-i-title {
+        display: block; } }
 
 .socials {
   font-size: 0; }
@@ -518,6 +636,10 @@ button {
   box-sizing: border-box;
   margin-left: -115px;
   border-radius: 5px; }
+  @media screen and (max-width: 614px) {
+    .tooltips {
+      left: 0;
+      margin-left: -30px; } }
   .tooltips:before {
     content: '';
     position: absolute;
@@ -538,6 +660,10 @@ button {
     border-radius: 2px;
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
     background-color: #fff; }
+    @media screen and (max-width: 614px) {
+      .tooltips:after {
+        left: 30px;
+        margin-left: 0; } }
   .tooltips-text {
     position: relative;
     z-index: 100;

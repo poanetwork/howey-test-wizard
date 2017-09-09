@@ -9,6 +9,7 @@
   .container {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
   }
 
   &-i {
@@ -49,6 +50,9 @@
   }
 
   &-step {
+    position: relative;
+    z-index: 2;
+
     &:before {
       transition: 0.3s background-color;
       content: attr(data-step);

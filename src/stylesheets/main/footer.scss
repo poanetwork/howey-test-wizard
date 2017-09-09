@@ -8,6 +8,10 @@
   background-position: center center;
   color: #fff;
 
+  @media screen and (max-width: $tablet-width) {
+    height: $footer-height + 20px;
+  }
+
   .container {
     position: relative;
   }
@@ -18,6 +22,11 @@
     position: absolute;
     z-index: 1;
     top: 50%;
+
+    @media screen and (max-width: $tablet-width) {
+      transform: translate(0);
+      top: 20px;
+    }
   }
 
   .logo {
@@ -33,6 +42,11 @@
     line-height: $footer-height;
     text-align: center;
     font-size: 12px;
+
+    @media screen and (max-width: $tablet-width) {
+      padding-top: $footer-height;
+      line-height: 20px;
+    }
   }
 
   .socials {

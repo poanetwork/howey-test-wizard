@@ -70,23 +70,23 @@ export class Results extends Component {
           <div className="table-cell scale">
             <div className="scale-i">
               <span className="scale-i-value very-unlikely">0 or less</span>
-              Very unlikely
+              <span className="scale-i-title">Very unlikely</span>
             </div>
             <div className="scale-i">
               <span className="scale-i-value unlikely">1 - 33</span>
-              Unlikely
+              <span className="scale-i-title">Unlikely</span>
             </div>
             <div className="scale-i">
               <span className="scale-i-value equally">34 - 66</span>
-              Equally likely and unlikely
+              <span className="scale-i-title">Equally likely and unlikely</span>
             </div>
             <div className="scale-i">
               <span className="scale-i-value likely">67 - 99</span>
-              Likely
+              <span className="scale-i-title">Likely</span>
             </div>
             <div className="scale-i">
               <span className="scale-i-value very-likely">100 or more</span>
-              Very likely
+              <span className="scale-i-title">Very likely</span>
             </div>
           </div>
         </section>

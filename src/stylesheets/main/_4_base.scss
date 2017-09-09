@@ -18,10 +18,13 @@ html {
 body {
   position: relative;
   width: 100%;
-  min-width: 980px;
   box-sizing: border-box;
   padding: $header-height 0 $footer-height;
   background-color: #fbfbfc;
+
+  @media screen and (max-width: $tablet-width) {
+    padding-bottom: $footer-height + 20px;
+  }
 }
 
 a {
@@ -48,6 +51,10 @@ div[data-reactroot] {
 .container {
   width: $container-width;
   margin: 0 auto;
+
+  @media screen and (max-width: ($container-width + 10px)) {
+    width: 98%;
+  }
 }
 
 .center {
@@ -76,6 +83,16 @@ div[data-reactroot] {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
+
+  @media screen and (max-width: $tablet-width) {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
 }
 
 .description {
@@ -83,4 +100,13 @@ div[data-reactroot] {
   color: #8197a2;
   line-height: 24px;
   font-size: 13px;
+
+  @media screen and (max-width: $tablet-width) {
+    text-align: center;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 }

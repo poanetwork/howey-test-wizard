@@ -29492,7 +29492,11 @@ var Results = exports.Results = function (_Component) {
                 { className: 'scale-i-value very-unlikely' },
                 '0 or less'
               ),
-              'Very unlikely'
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-title' },
+                'Very unlikely'
+              )
             ),
             _react2.default.createElement(
               'div',
@@ -29502,7 +29506,11 @@ var Results = exports.Results = function (_Component) {
                 { className: 'scale-i-value unlikely' },
                 '1 - 33'
               ),
-              'Unlikely'
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-title' },
+                'Unlikely'
+              )
             ),
             _react2.default.createElement(
               'div',
@@ -29512,7 +29520,11 @@ var Results = exports.Results = function (_Component) {
                 { className: 'scale-i-value equally' },
                 '34 - 66'
               ),
-              'Equally likely and unlikely'
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-title' },
+                'Equally likely and unlikely'
+              )
             ),
             _react2.default.createElement(
               'div',
@@ -29522,7 +29534,11 @@ var Results = exports.Results = function (_Component) {
                 { className: 'scale-i-value likely' },
                 '67 - 99'
               ),
-              'Likely'
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-title' },
+                'Likely'
+              )
             ),
             _react2.default.createElement(
               'div',
@@ -29532,7 +29548,11 @@ var Results = exports.Results = function (_Component) {
                 { className: 'scale-i-value very-likely' },
                 '100 or more'
               ),
-              'Very likely'
+              _react2.default.createElement(
+                'span',
+                { className: 'scale-i-title' },
+                'Very likely'
+              )
             )
           )
         )

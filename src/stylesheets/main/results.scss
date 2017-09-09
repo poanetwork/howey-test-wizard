@@ -5,6 +5,32 @@
     border-radius: 50%;
   }
 
+  .title {
+    @media screen and (max-width: $mobile-width) {
+      font-size: 16px;
+    }
+  }
+
+  .title,
+  .description {
+    @media screen and (max-width: $tablet-width) {
+      text-align: left;
+    }
+  }
+
+  .table,
+  .table-cell {
+    @media screen and (max-width: ($container-width + 10px)) {
+      display: block;
+    }
+  }
+
+  .table-cell {
+    @media screen and (max-width: ($container-width + 10px)) {
+      padding: 20px 0;
+    }
+  }
+
   &-value {
     float: right;
     font-weight: normal;
@@ -14,6 +40,7 @@
     }
 
     .indicator {
+      vertical-align: bottom;
       width: 18px;
       height: 18px;
     }

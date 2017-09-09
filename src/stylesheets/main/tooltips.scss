@@ -19,6 +19,11 @@
   margin-left: -115px;
   border-radius: 5px;
 
+  @media screen and (max-width: ($mobile-width + 200px)) {
+    left: 0;
+    margin-left: -30px;
+  }
+
   $this: &;
 
   &:before {
@@ -43,6 +48,11 @@
     border-radius: 2px;
     box-shadow: 0 0 3px 1px fade-out(#000, 0.7);
     background-color: #fff;
+
+    @media screen and (max-width: ($mobile-width + 200px)) {
+      left: 30px;
+      margin-left: 0;
+    }
   }
 
   &-text {
