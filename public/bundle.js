@@ -28608,7 +28608,7 @@ var Footer = exports.Footer = function Footer() {
       _react2.default.createElement(
         'p',
         { className: 'rights' },
-        '2017 Oracles Network. All rights reserved.'
+        '2017 POA Network. All rights reserved.'
       ),
       _react2.default.createElement(_reactRouterDom.Link, { className: 'logo', to: '/' }),
       _react2.default.createElement(
@@ -28616,7 +28616,7 @@ var Footer = exports.Footer = function Footer() {
         { className: 'socials' },
         _react2.default.createElement('a', { href: '#', className: 'social social_reddit' }),
         _react2.default.createElement('a', { href: 'https://twitter.com//oraclesorg', className: 'social social_twitter' }),
-        _react2.default.createElement('a', { href: 'https://www.oracles.org', className: 'social social_oracles' }),
+        _react2.default.createElement('a', { href: 'https://poa.network', className: 'social social_oracles' }),
         _react2.default.createElement('a', { href: 'https://t.me/oraclesnetwork', className: 'social social_telegram' }),
         _react2.default.createElement('a', { href: 'https://github.com/oraclesorg/howey-test-wizard', className: 'social social_github' })
       )
