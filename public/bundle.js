@@ -28614,11 +28614,10 @@ var Footer = exports.Footer = function Footer() {
       _react2.default.createElement(
         'div',
         { className: 'socials' },
-        _react2.default.createElement('a', { href: '#', className: 'social social_reddit' }),
-        _react2.default.createElement('a', { href: 'https://twitter.com//oraclesorg', className: 'social social_twitter' }),
+        _react2.default.createElement('a', { href: 'https://twitter.com/poanetwork', className: 'social social_twitter' }),
         _react2.default.createElement('a', { href: 'https://poa.network', className: 'social social_oracles' }),
         _react2.default.createElement('a', { href: 'https://t.me/oraclesnetwork', className: 'social social_telegram' }),
-        _react2.default.createElement('a', { href: 'https://github.com/oraclesorg/howey-test-wizard', className: 'social social_github' })
+        _react2.default.createElement('a', { href: 'https://github.com/poanetwork/howey-test-wizard', className: 'social social_github' })
       )
     )
   );
